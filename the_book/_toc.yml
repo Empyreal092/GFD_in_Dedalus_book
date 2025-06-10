@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+
+root: intro_n_conc/landing
+options:
+  numbered: 3
+chapters:
+- file: intro_n_conc/intro
+- file: Barotropic_vort/doc
+- file: Baroclinic_mode/Baroclinic_mode
+- file: intro_n_conc/references
