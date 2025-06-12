@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Baroclinic_mode/Baroclinic_mode';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Bibliography" href="../intro_n_conc/references.html" />
+    <link rel="next" title="4. Linear instability analysis of 3DQG baroclinic instability" href="../3DQG_Linstab/Eady_eigvalnvec.html" />
     <link rel="prev" title="2. The barotropic vorticity model" href="../Barotropic_vort/doc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -144,7 +144,7 @@
     
   
 
-<a class="navbar-brand logo" href="../intro_n_conc/landing.html">
+<a class="navbar-brand logo" href="../landing.html">
   
   
   
@@ -170,7 +170,7 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro_n_conc/landing.html">
+                <a class="reference internal" href="../landing.html">
                     Welcome to GFD in Dedalus
                 </a>
             </li>
@@ -179,7 +179,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/intro.html">1. Introduciton</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">2. The barotropic vorticity model</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Baroclinic modes for arbitrary stratification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">4. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3DQG_Linstab/Eady_eigvalnvec.html">4. Linear instability analysis of 3DQG baroclinic instability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">5. Bibliography</a></li>
 </ul>
 
     </div>
@@ -234,7 +235,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -251,7 +252,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FBaroclinic_mode/Baroclinic_mode.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book/issues/new?title=Issue%20on%20page%20%2FBaroclinic_mode/Baroclinic_mode.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,8 +383,8 @@ document.write(`
 <p>This is an simple example of the eigenvalue problem module of Dedalus.</p>
 <p>We solve the baroclinic mode for arbitrary stratification profiles. That
 is, we solve the Sturm–Liouville problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a25680ed-7ff5-466f-a805-d46db8319dc6">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-a25680ed-7ff5-466f-a805-d46db8319dc6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c0edfa69-5cc8-4758-a526-0d38fd57839f">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-c0edfa69-5cc8-4758-a526-0d38fd57839f" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{\mathrm{d}}{\mathrm{d}z}\left( \frac{f^2}{N^2}\frac{\mathrm{d}\psi}{\mathrm{d}z} \right) = -\lambda^2\psi\\
 \text{with}\qquad &amp;\frac{\mathrm{d}\psi}{\mathrm{d}z}(z=0)=\frac{\mathrm{d}\psi}{\mathrm{d}z}(z=-H)=0
 \end{align}\]</div>
@@ -466,16 +467,16 @@ physical values only change the eigenvalues by a constant.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: interp(Diff(&lt;Field 136838105732496&gt;), z=-6.283185307179586),
- &#39;LHS&#39;: interp(Diff(&lt;Field 136838105732496&gt;), z=-6.283185307179586),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: interp(Diff(&lt;Field 139482680972688&gt;), z=-6.283185307179586),
+ &#39;LHS&#39;: interp(Diff(&lt;Field 139482680972688&gt;), z=-6.283185307179586),
  &#39;RHS&#39;: 0,
  &#39;condition&#39;: &#39;True&#39;,
  &#39;tensorsig&#39;: (),
  &#39;dtype&#39;: numpy.complex128,
  &#39;valid_modes&#39;: array([ True]),
  &#39;M&#39;: 0,
- &#39;L&#39;: interp(Diff(&lt;Field 136838105732496&gt;), z=-6.283185307179586),
- &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x7c741aaf1450&gt;,
+ &#39;L&#39;: interp(Diff(&lt;Field 139482680972688&gt;), z=-6.283185307179586),
+ &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x7edbd7a6d450&gt;,
  &#39;matrix_dependence&#39;: array([ True]),
  &#39;matrix_coupling&#39;: array([ True])}
 </pre></div>
@@ -491,7 +492,7 @@ physical values only change the eigenvalues by a constant.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-10 20:21:22,286 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.9e+00/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:18:45,811 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.0e+00/s
 </pre></div>
 </div>
 </div>
@@ -530,8 +531,8 @@ physical values only change the eigenvalues by a constant.</p>
 </div>
 <p>There are many definitions of orthogonal vertical mode for the ocean.
 For some examples, see
-<span id="id1">[<a class="reference internal" href="../intro_n_conc/references.html#id13" title="K. Shafer Smith and Jacques Vanneste. A Surface-Aware Projection Basis for Quasigeostrophic Flow. Journal of Physical Oceanography, 43(3):548–562, March 2013. doi:10.1175/JPO-D-12-0107.1.">SV13</a>]</span>, <span id="id2">[<a class="reference internal" href="../intro_n_conc/references.html#id14" title="J. H. LaCasce. The Prevalence of Oceanic Surface Modes. Geophysical Research Letters, 44(21):11,097–11,105, 2017. doi:10.1002/2017GL075430.">LaC17</a>]</span>, and
-<span id="id3">[<a class="reference internal" href="../intro_n_conc/references.html#id15" title="Houssam Yassin and Stephen M. Griffies. On the Discrete Normal Modes of Quasigeostrophic Theory. Journal of Physical Oceanography, 52(2):243–259, February 2022. doi:10.1175/JPO-D-21-0199.1.">YG22</a>]</span>. All these problems
+<span id="id1">[<a class="reference internal" href="../intro_n_conc/references.html#id13" title="K. Shafer Smith and Jacques Vanneste. A Surface-Aware Projection Basis for Quasigeostrophic Flow. Journal of Physical Oceanography, 43(3):548–562, March 2013. doi:10.1175/JPO-D-12-0107.1.">Smith and Vanneste, 2013</a>]</span>, <span id="id2">[<a class="reference internal" href="../intro_n_conc/references.html#id14" title="J. H. LaCasce. The Prevalence of Oceanic Surface Modes. Geophysical Research Letters, 44(21):11,097–11,105, 2017. doi:10.1002/2017GL075430.">LaCasce, 2017</a>]</span>, and
+<span id="id3">[<a class="reference internal" href="../intro_n_conc/references.html#id15" title="Houssam Yassin and Stephen M. Griffies. On the Discrete Normal Modes of Quasigeostrophic Theory. Journal of Physical Oceanography, 52(2):243–259, February 2022. doi:10.1175/JPO-D-21-0199.1.">Yassin and Griffies, 2022</a>]</span>. All these problems
 can be solved by Dedalus, with more or less modification of the above
 code.</p>
 <p>One could also input realistic stratification profiles from data,
@@ -580,11 +581,11 @@ particular, this code reproduces the functionality of
       </div>
     </a>
     <a class="right-next"
-       href="../intro_n_conc/references.html"
+       href="../3DQG_Linstab/Eady_eigvalnvec.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Bibliography</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Linear instability analysis of 3DQG baroclinic instability</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

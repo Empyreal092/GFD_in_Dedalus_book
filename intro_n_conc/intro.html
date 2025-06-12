@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. The barotropic vorticity model" href="../Barotropic_vort/doc.html" />
-    <link rel="prev" title="Welcome to GFD in Dedalus" href="landing.html" />
+    <link rel="prev" title="Welcome to GFD in Dedalus" href="../landing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -144,7 +144,7 @@
     
   
 
-<a class="navbar-brand logo" href="landing.html">
+<a class="navbar-brand logo" href="../landing.html">
   
   
   
@@ -170,7 +170,7 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="landing.html">
+                <a class="reference internal" href="../landing.html">
                     Welcome to GFD in Dedalus
                 </a>
             </li>
@@ -179,7 +179,8 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduciton</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">2. The barotropic vorticity model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">3. Baroclinic modes for arbitrary stratification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">4. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3DQG_Linstab/Eady_eigvalnvec.html">4. Linear instability analysis of 3DQG baroclinic instability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">5. Bibliography</a></li>
 </ul>
 
     </div>
@@ -234,7 +235,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -251,7 +252,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro_n_conc/intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book/issues/new?title=Issue%20on%20page%20%2Fintro_n_conc/intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -435,7 +436,7 @@ need to use the <code class="docutils literal notranslate"><span class="pre">d3.
 </section>
 <section id="calculating-spectrum">
 <h4>Calculating spectrum<a class="headerlink" href="#calculating-spectrum" title="Link to this heading">#</a></h4>
-<p>The spectra of a turbulence field is a commonly calculated quantity <span id="id2">[<a class="reference internal" href="references.html#id3" title="A. M. Yaglom. An Introduction to the Theory of Stationary Random Functions. Courier Corporation, 1962. ISBN 978-0-486-49571-2.">Yag62</a>]</span>. It is particularly easy to calculate the spectra in a perdiodic simulation represented using Fourier modes.
+<p>The spectra of a turbulence field is a commonly calculated quantity <span id="id2">[<a class="reference internal" href="references.html#id3" title="A. M. Yaglom. An Introduction to the Theory of Stationary Random Functions. Courier Corporation, 1962. ISBN 978-0-486-49571-2.">Yaglom, 1962</a>]</span>. It is particularly easy to calculate the spectra in a perdiodic simulation represented using Fourier modes.
 However, it is important that the calculated spectra sum up to equal the <span class="math notranslate nohighlight">\(L^2\)</span>-norm of the underlying field, folliwng the Parseval’s theorem.
 This can be tricky when calculating the isotropic spectra of 2D fields, where one needs to make sure no modes are left over and no modes are counted twice.
 The first section will be a tutorial about calculating the 2D isotropic spectra. The result is the <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus/blob/main/dedalus_subroutines/.py"><code class="docutils literal notranslate"><span class="pre">isospectrum</span></code> function</a> that is used for the rest of the book.</p>
@@ -533,7 +534,7 @@ Direct Numerical Simulation (DNS), as opposed to Large Eddy Simulation
 (LES) or General Circulation Model (GCM). They are different tools that
 solve different problems. Here, we will minaly use Dedalus to solve austere models in
 idealized set-ups. We take a philosophical approach well summarized in
-<span id="id3">[<a class="reference internal" href="references.html#id4" title="Geoffrey K. Vallis. Geophysical fluid dynamics: whence, whither and why? Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences, 472(2192):20160140, August 2016. doi:10.1098/rspa.2016.0140.">Val16</a>]</span>:</p>
+<span id="id3">[<a class="reference internal" href="references.html#id4" title="Geoffrey K. Vallis. Geophysical fluid dynamics: whence, whither and why? Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences, 472(2192):20160140, August 2016. doi:10.1098/rspa.2016.0140.">Vallis, 2016</a>]</span>:</p>
 <blockquote>
 <div><p>The moniker ‘GFD’ has also come to imply a methodology in which one makes the maximum possible simplifications to a problem, perhaps a seemingly very complex problem, seeking to reduce it to some bare essence. It suggests an austere approach, devoid of extraneous detail or superfluous description, so providing the fundamental principles and language for understanding geophysical flows without being overwhelmed by any inessentials that may surround the core problem. In this sense, GFD describes a method as well as an object of study.</p>
 </div></blockquote>
@@ -545,14 +546,14 @@ parameters for the dynamics. For us, this greatly simplifies the task of
 understanding the model and generalize the conclusion we obtain. We will
 always simulate the nondimensional version of the equations in the
 following examples.</p>
-<p>In particular, we will use the notation of <span id="id4">[<a class="reference internal" href="references.html#id6" title="Geoffrey K. Vallis. Potential vorticity inversion and balanced equations of motion for rotating and stratified flows. Quarterly Journal of the Royal Meteorological Society, 122(529):291–322, 1996. doi:10.1002/qj.49712252912.">Val96</a>]</span>:</p>
+<p>In particular, we will use the notation of <span id="id4">[<a class="reference internal" href="references.html#id6" title="Geoffrey K. Vallis. Potential vorticity inversion and balanced equations of motion for rotating and stratified flows. Quarterly Journal of the Royal Meteorological Society, 122(529):291–322, 1996. doi:10.1002/qj.49712252912.">Vallis, 1996</a>]</span>:</p>
 <blockquote>
 <div><p>Here, and in the rest of the paper, expressions are written in dimensional form. The relevant non-dimensional parameters are also given, enclosed in curly brackets, <span class="math notranslate nohighlight">\(\{\}\)</span>. The pure dimensional form may be recovered simply by setting to unity the contents of the curly brackets. The non-dimensional form is recovered by setting all the physical parameters (such as <span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(f\)</span>) to unity. This notation enables both the asymptotic ordering and physical appreciation of the terms to be facilitated.</p>
 </div></blockquote>
 <p>For example, the Boussinesq system under the geostrophic scaling reads
-(cf. <span id="id5">[<a class="reference internal" href="references.html#id5" title="Geoffrey K. Vallis. Atmospheric and Oceanic Fluid Dynamics: Fundamentals and Large-Scale Circulation. Cambridge University Press, Cambridge, 2 edition, 2017. ISBN 978-1-107-06550-5. doi:10.1017/9781107588417.">Val17</a>]</span>(PE.1-4)):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9b30c41a-5db5-488a-b5e4-bdd7a92b3aa3">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-9b30c41a-5db5-488a-b5e4-bdd7a92b3aa3" title="Permalink to this equation">#</a></span>\[\begin{align}
+(cf. <span id="id5">[<a class="reference internal" href="references.html#id5" title="Geoffrey K. Vallis. Atmospheric and Oceanic Fluid Dynamics: Fundamentals and Large-Scale Circulation. Cambridge University Press, Cambridge, 2 edition, 2017. ISBN 978-1-107-06550-5. doi:10.1017/9781107588417.">Vallis, 2017</a>]</span>(PE.1-4)):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7acca0ff-cf76-493f-bed5-80f0a396d2d5">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-7acca0ff-cf76-493f-bed5-80f0a396d2d5" title="Permalink to this equation">#</a></span>\[\begin{align}
     &amp;\{\text{Ro}\}\left(\frac{\mathrm{D} u}{\mathrm{D} t}-\beta y v\right)-fv = -\phi_x,\\
     &amp;\{\text{Ro}\}\left(\frac{\mathrm{D} v}{\mathrm{D} t}+\beta y u\right)+fu = -\phi_y,\\
     &amp;\phi_z = b,\\
@@ -560,8 +561,8 @@ following examples.</p>
     &amp;u_x+v_y+w_z = 0
 \end{align}\]</div>
 <p>where we have the two nondimensional number</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a69dacf5-e965-4460-b653-def2055f2ea0">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-a69dacf5-e965-4460-b653-def2055f2ea0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6e08ebfe-4175-4b77-b9b5-bd30ec5b165d">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-6e08ebfe-4175-4b77-b9b5-bd30ec5b165d" title="Permalink to this equation">#</a></span>\[\begin{align}
     \text{Ro}:= \frac{U}{fL};\qquad \text{Fr}= \frac{U}{NH}.
 \end{align}\]</div>
 </section>
@@ -572,11 +573,11 @@ features. The implemented models at the moments reflect our bias. Here is a
 list of models seems worthwhile to us to implement in Dedalus. We
 especially encourage students of GFD to try to implement some models.</p>
 <ul class="simple">
-<li><p>The Matsuno-Gill model for equatorial dynamics <span id="id6">[<a class="reference internal" href="references.html#id7" title="Taroh Matsuno. Quasi-Geostrophic Motions in the Equatorial Area. Journal of the Meteorological Society of Japan. Ser. II, 44(1):25–43, 1966. doi:10.2151/jmsj1965.44.1_25.">Mat66</a>]</span>, <span id="id7">[<a class="reference internal" href="references.html#id8" title="A. E. Gill. Some simple solutions for heat-induced tropical circulation. Quarterly Journal of the Royal Meteorological Society, 106(449):447–462, 1980. doi:10.1002/qj.49710644905.">Gil80</a>]</span>. The same model on the sphere is done recently
-by <span id="id8">[<a class="reference internal" href="references.html#id9" title="Ofer Shamir, Chaim I. Garfinkel, Edwin P. Gerber, and Nathan Paldor. The Matsuno–Gill model on the sphere. Journal of Fluid Mechanics, 964:A32, June 2023. doi:10.1017/jfm.2023.369.">SGGP23</a>]</span>.</p></li>
+<li><p>The Matsuno-Gill model for equatorial dynamics <span id="id6">[<a class="reference internal" href="references.html#id7" title="Taroh Matsuno. Quasi-Geostrophic Motions in the Equatorial Area. Journal of the Meteorological Society of Japan. Ser. II, 44(1):25–43, 1966. doi:10.2151/jmsj1965.44.1_25.">Matsuno, 1966</a>]</span>, <span id="id7">[<a class="reference internal" href="references.html#id8" title="A. E. Gill. Some simple solutions for heat-induced tropical circulation. Quarterly Journal of the Royal Meteorological Society, 106(449):447–462, 1980. doi:10.1002/qj.49710644905.">Gill, 1980</a>]</span>. The same model on the sphere is done recently
+by <span id="id8">[<a class="reference internal" href="references.html#id9" title="Ofer Shamir, Chaim I. Garfinkel, Edwin P. Gerber, and Nathan Paldor. The Matsuno–Gill model on the sphere. Journal of Fluid Mechanics, 964:A32, June 2023. doi:10.1017/jfm.2023.369.">Shamir <em>et al.</em>, 2023</a>]</span>.</p></li>
 <li><p>Some linear model of tide and lee waves. Possible examples are
-<span id="id9">[<a class="reference internal" href="references.html#id10" title="Stefan G. Llewellyn Smith and William R. Young. Conversion of the Barotropic Tide. Journal of Physical Oceanography, 32(5):1554–1566, May 2002. doi:10.1175/1520-0485(2002)032&lt;1554:COTBT&gt;2.0.CO;2.">SY02</a>]</span>, <span id="id10">[<a class="reference internal" href="references.html#id11" title="Benoit Cushman-Roisin and Jean-Marie Beckers. Introduction to Geophysical Fluid Dynamics: Physical and Numerical Aspects. Academic Press, September 2011. ISBN 978-0-12-088759-0.">CRB11</a>]</span>(13.2), and
-<span id="id11">[<a class="reference internal" href="references.html#id12" title="Maxim Nikurashin and Raffaele Ferrari. Radiation and Dissipation of Internal Waves Generated by Geostrophic Motions Impinging on Small-Scale Topography: Theory. Journal of Physical Oceanography, 40(5):1055–1074, May 2010. doi:10.1175/2009JPO4199.1.">NF10</a>]</span>.</p></li>
+<span id="id9">[<a class="reference internal" href="references.html#id10" title="Stefan G. Llewellyn Smith and William R. Young. Conversion of the Barotropic Tide. Journal of Physical Oceanography, 32(5):1554–1566, May 2002. doi:10.1175/1520-0485(2002)032&lt;1554:COTBT&gt;2.0.CO;2.">Smith and Young, 2002</a>]</span>, <span id="id10">[<a class="reference internal" href="references.html#id11" title="Benoit Cushman-Roisin and Jean-Marie Beckers. Introduction to Geophysical Fluid Dynamics: Physical and Numerical Aspects. Academic Press, September 2011. ISBN 978-0-12-088759-0.">Cushman-Roisin and Beckers, 2011</a>]</span>(13.2), and
+<span id="id11">[<a class="reference internal" href="references.html#id12" title="Maxim Nikurashin and Raffaele Ferrari. Radiation and Dissipation of Internal Waves Generated by Geostrophic Motions Impinging on Small-Scale Topography: Theory. Journal of Physical Oceanography, 40(5):1055–1074, May 2010. doi:10.1175/2009JPO4199.1.">Nikurashin and Ferrari, 2010</a>]</span>.</p></li>
 </ul>
 </section>
 </section>
@@ -613,7 +614,7 @@ by <span id="id8">[<a class="reference internal" href="references.html#id9" titl
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="landing.html"
+       href="../landing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
