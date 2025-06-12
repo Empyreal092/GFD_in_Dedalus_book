@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 import cmocean.cm as cmo
 
-plt.style.use('/mnt/c/Ryan_Data/Python_Tool/ryan_mplstyle.mplstyle')
+plt.style.use('/mnt/c/Ryan_Data/Tools/Python_Tool/ryan_mplstyle.mplstyle')
 
 # Physical Parameters
 Ub = 1
@@ -126,12 +126,12 @@ for xin2 in xin2_ary:
         grow_ary[ix] = np.imag(evals[e_loc])
    
     fig = plt.figure(1)
-    plt.semilogx(k_ary,grow_ary,label="$\zeta^{-2}=%.1f$" %xin2)
+    plt.semilogx(k_ary,grow_ary,label=r"$\xi^{-2}=%.1f$" %xin2)
 
 fig = plt.figure(1)
 plt.legend()
 plt.xlim(np.exp(-1.5),10)
 
-plt.savefig("figs/Charney_evalparam.pdf", bbox_inches='tight')
+plt.savefig("figs/Charney_evalparam.png", bbox_inches='tight')
 # plt.show()
 

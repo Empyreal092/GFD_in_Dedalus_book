@@ -10,5 +10,8 @@ chapters:
 - file: intro_n_conc/intro
 - file: Barotropic_vort/doc
 - file: Baroclinic_mode/Baroclinic_mode
-- file: 3DQG_Linstab/Eady_eigvalnvec
+- file: 3DQG_Linstab/3DQG_Linstab_doc
+  sections:
+  - file: 3DQG_Linstab/Eady_doc
+  - file: 3DQG_Linstab/Chatney_doc
 - file: intro_n_conc/references
