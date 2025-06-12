@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. The barotropic vorticity model &#8212; GFD in Dedalus</title>
+    <title>4. Linear instability analysis of 3DQG baroclinic instability &#8212; GFD in Dedalus</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Barotropic_vort/doc';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3DQG_Linstab/3DQG_Linstab_doc';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Baroclinic modes for arbitrary stratification" href="../Baroclinic_mode/Baroclinic_mode.html" />
-    <link rel="prev" title="1. Introduciton" href="../intro_n_conc/intro.html" />
+    <link rel="next" title="4.1. The Eady instability" href="Eady_doc.html" />
+    <link rel="prev" title="3. Baroclinic modes for arbitrary stratification" href="../Baroclinic_mode/Baroclinic_mode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,11 +177,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/intro.html">1. Introduciton</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. The barotropic vorticity model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">2. The barotropic vorticity model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">3. Baroclinic modes for arbitrary stratification</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3DQG_Linstab/3DQG_Linstab_doc.html">4. Linear instability analysis of 3DQG baroclinic instability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Eady_doc.html">4.1. The Eady instability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Chatney_doc.html">4.2. The ocean Charney instability</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Linear instability analysis of 3DQG baroclinic instability</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Eady_doc.html">4.1. The Eady instability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chatney_doc.html">4.2. The ocean Charney instability</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">5. Bibliography</a></li>
@@ -256,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book/issues/new?title=Issue%20on%20page%20%2FBarotropic_vort/doc.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book/issues/new?title=Issue%20on%20page%20%2F3DQG_Linstab/3DQG_Linstab_doc.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="../_sources/Barotropic_vort/doc.md" target="_blank"
+      <li><a href="../_sources/3DQG_Linstab/3DQG_Linstab_doc.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The barotropic vorticity model</h1>
+    <h1>Linear instability analysis of 3DQG baroclinic instability</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,25 +382,40 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-barotropic-vorticity-model">
-<span id="chap-baro-vort"></span><h1><span class="section-number">2. </span>The barotropic vorticity model<a class="headerlink" href="#the-barotropic-vorticity-model" title="Link to this heading">#</a></h1>
-<p>We start with perhaps the most simple model of geophysical turbulence,
-barotropic vorticity model. We can write the model in vorticity form
-<span id="id1">Vallis [<a class="reference internal" href="../intro_n_conc/references.html#id5" title="Geoffrey K. Vallis. Atmospheric and Oceanic Fluid Dynamics: Fundamentals and Large-Scale Circulation. Cambridge University Press, Cambridge, 2 edition, 2017. ISBN 978-1-107-06550-5. doi:10.1017/9781107588417.">2017</a>]</span> §4.2.1:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c51d0478-f527-4d0c-bd39-3c2a9d30498a">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-c51d0478-f527-4d0c-bd39-3c2a9d30498a" title="Permalink to this equation">#</a></span>\[\begin{align}
-    &amp;\frac{\mathrm{D}}{\mathrm{D} t}\left( \{\text{Ro}^{-1}\}f+\zeta \right) = 0,\\
-    &amp;\zeta = \nabla^2\psi,\\
-    &amp;u = -\frac{\partial\psi}{\partial y}, v = \frac{\partial\psi}{\partial x}.
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-instability-analysis-of-3dqg-baroclinic-instability">
+<h1><span class="section-number">4. </span>Linear instability analysis of 3DQG baroclinic instability<a class="headerlink" href="#linear-instability-analysis-of-3dqg-baroclinic-instability" title="Link to this heading">#</a></h1>
+<p>We solve the linear instability analysis problem of three-dimensional
+baroclinic instability in the quasi-geostrophic (QG) model.</p>
+<p>We have the 3D QG model in the <span class="math notranslate nohighlight">\(\beta\)</span>-plane under the mean zonal
+velocity <span class="math notranslate nohighlight">\(U(z)\)</span>. We have the surface meridional buoyancy gradient
+<span class="math notranslate nohighlight">\(B_y(z=-H, 0)\)</span> from thermal wind balance. This also implies a mean
+meridional PV gradient</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e96737fb-5584-4b61-ab01-d803f37d3152">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-e96737fb-5584-4b61-ab01-d803f37d3152" title="Permalink to this equation">#</a></span>\[\begin{align}
+    Q_y = \{\xi^{-2}\}\beta-\nabla^2 U-\{\text{Bu}^{-1}\}\frac{\mathrm{d}}{\mathrm{d} z}\left(\frac{f^2}{N^2}\frac{\mathrm{d} U}{\mathrm{d} z}\right)
 \end{align}\]</div>
-<p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6b57bcdd-4128-473e-a6c4-e18f0981b10d">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-6b57bcdd-4128-473e-a6c4-e18f0981b10d" title="Permalink to this equation">#</a></span>\[\begin{align}
-    \text{Ro} = \frac{U}{fL}.
+<p>where we ignore the <span class="math notranslate nohighlight">\(\nabla^2 U\)</span> term with our
+assumption that <span class="math notranslate nohighlight">\(U\)</span> is horizontally constant. Now we have the 3DQG
+system:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-81eb243d-4124-4b85-8941-2ee9d831dd63">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-81eb243d-4124-4b85-8941-2ee9d831dd63" title="Permalink to this equation">#</a></span>\[\begin{align}
+    &amp;\frac{\mathrm{D} q}{\mathrm{D} t}+Uq_x+vQ_y = 0; \\
+    &amp;\frac{\mathrm{D} b}{\mathrm{D} t}+Ub_x+vB_y = 0 \quad\text{at}\quad z=-H, 0; \\
+    &amp;\nabla^2\psi + \{\text{Bu}^{-1}\}\frac{\partial}{\partial z}\left(\frac{f^2}{N^2}\frac{\partial\psi}{\partial z}\right) = q \\
+    &amp;\quad\quad\text{w/}\quad \psi_z = b/f \quad\text{at}\quad z=-H, 0; \\
+    &amp;u = -\psi_y, \quad v = \psi_x.
 \end{align}\]</div>
-<p>If <span class="math notranslate nohighlight">\(f\)</span> is constant, it is the 2D incompressible Euler equation. We note
-that we do not use quasi-geostrophic to describe this model and reserve
-that name to the model with a finite deformation radius.</p>
+<p>We use the nondimensional number</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6c1c73a4-2ad0-48b7-9ce1-a267cd853e21">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-6c1c73a4-2ad0-48b7-9ce1-a267cd853e21" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \xi^{-2} = \frac{f_0 L}{U} \quad\text{,}\quad \text{Bu} = \frac{N(0)^2H^2}{f_0^2L^2} = \frac{L_{d}^2}{L^2}.
+\end{align}\]</div>
+<p>Finally for the linear instability analysis we form a
+linear system by assuming small perturbation and ignoring all quadratic
+in perturbation terms. We then solve the eigenproblem of the linear
+system.</p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -416,7 +431,7 @@ that name to the model with a finite deformation radius.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./Barotropic_vort"
+            path: "./3DQG_Linstab"
         },
         predefinedOutput: true
     }
@@ -434,20 +449,20 @@ that name to the model with a finite deformation radius.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro_n_conc/intro.html"
+       href="../Baroclinic_mode/Baroclinic_mode.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduciton</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Baroclinic modes for arbitrary stratification</p>
       </div>
     </a>
     <a class="right-next"
-       href="../Baroclinic_mode/Baroclinic_mode.html"
+       href="Eady_doc.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Baroclinic modes for arbitrary stratification</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>The Eady instability</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

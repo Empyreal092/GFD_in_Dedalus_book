@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Linear instability analysis of 3DQG baroclinic instability &#8212; GFD in Dedalus</title>
+    <title>4.1. The Eady instability &#8212; GFD in Dedalus</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '3DQG_Linstab/Eady_eigvalnvec';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3DQG_Linstab/Eady_doc';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Bibliography" href="../intro_n_conc/references.html" />
-    <link rel="prev" title="3. Baroclinic modes for arbitrary stratification" href="../Baroclinic_mode/Baroclinic_mode.html" />
+    <link rel="next" title="4.2. The ocean Charney instability" href="Chatney_doc.html" />
+    <link rel="prev" title="4. Linear instability analysis of 3DQG baroclinic instability" href="3DQG_Linstab_doc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,7 +179,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/intro.html">1. Introduciton</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">2. The barotropic vorticity model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">3. Baroclinic modes for arbitrary stratification</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Linear instability analysis of 3DQG baroclinic instability</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="3DQG_Linstab_doc.html">4. Linear instability analysis of 3DQG baroclinic instability</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. The Eady instability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chatney_doc.html">4.2. The ocean Charney instability</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">5. Bibliography</a></li>
 </ul>
 
@@ -252,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book/issues/new?title=Issue%20on%20page%20%2F3DQG_Linstab/Eady_eigvalnvec.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book/issues/new?title=Issue%20on%20page%20%2F3DQG_Linstab/Eady_doc.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +286,7 @@
       
       
       
-      <li><a href="../_sources/3DQG_Linstab/Eady_eigvalnvec.ipynb" target="_blank"
+      <li><a href="../_sources/3DQG_Linstab/Eady_doc.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,9 +357,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -366,19 +368,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linear instability analysis of 3DQG baroclinic instability</h1>
+    <h1>The Eady instability</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eady-instability">4.1. The Eady instability</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -388,40 +382,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="linear-instability-analysis-of-3dqg-baroclinic-instability">
-<h1><span class="section-number">4. </span>Linear instability analysis of 3DQG baroclinic instability<a class="headerlink" href="#linear-instability-analysis-of-3dqg-baroclinic-instability" title="Link to this heading">#</a></h1>
-<p>We solve the linear instability analysis problem of three-dimensional
-baroclinic instability in the quasi-geostrophic (QG) model.</p>
-<p>We have the 3D QG model in the <span class="math notranslate nohighlight">\(\beta\)</span>-plane under the mean zonal
-velocity <span class="math notranslate nohighlight">\(U(z)\)</span>. We have the surface meridional buoyancy gradient
-<span class="math notranslate nohighlight">\(B_y(z=-H, 0)\)</span> from thermal wind balance. This also implies a mean
-meridional PV gradient</p>
-<div class="amsmath math notranslate nohighlight" id="equation-edcd4276-72f0-4684-b6a5-1e3269804738">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-edcd4276-72f0-4684-b6a5-1e3269804738" title="Permalink to this equation">#</a></span>\[\begin{align}
-    Q_y = \{\xi^{-2}\}\beta-\nabla^2 U-\{\text{Bu}^{-1}\}\frac{\mathrm{d}}{\mathrm{d} z}\left(\frac{f^2}{N^2}\frac{\mathrm{d} U}{\mathrm{d} z}\right)
-\end{align}\]</div>
-<p>where we ignore the <span class="math notranslate nohighlight">\(\nabla^2 U\)</span> term with our
-assumption that <span class="math notranslate nohighlight">\(U\)</span> is horizontally constant. Now we have the 3DQG
-system:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a3eb2f8-4de8-49b2-80e0-c0d0df13f350">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-0a3eb2f8-4de8-49b2-80e0-c0d0df13f350" title="Permalink to this equation">#</a></span>\[\begin{align}
-    &amp;\frac{\mathrm{D} q}{\mathrm{D} t}+Uq_x+vQ_y = 0; \\
-    &amp;\frac{\mathrm{D} b}{\mathrm{D} t}+Ub_x+vB_y = 0 \quad\text{at}\quad z=-H, 0; \\
-    &amp;\nabla^2\psi + \{\text{Bu}^{-1}\}\frac{\partial}{\partial z}\left(\frac{f^2}{N^2}\frac{\partial\psi}{\partial z}\right) = q \\
-    &amp;\quad\quad\text{w/}\quad \psi_z = b/f \quad\text{at}\quad z=-H, 0; \\
-    &amp;u = -\psi_y, \quad v = \psi_x.
-\end{align}\]</div>
-<p>We use the nondimensional number</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a742209-6239-4dda-a264-3c972a31f6ee">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-6a742209-6239-4dda-a264-3c972a31f6ee" title="Permalink to this equation">#</a></span>\[\begin{align}
-    \xi^{-2} = \frac{f_0 L}{U} \quad\text{,}\quad \text{Bu} = \frac{N(0)^2H^2}{f_0^2L^2} = \frac{L_{d}^2}{L^2}.
-\end{align}\]</div>
-<p>Finally for the linear instability analysis we form a
-linear system by assuming small perturbation and ignoring all quadratic
-in perturbation terms. We then solve the eigenproblem of the linear
-system.</p>
-<section id="the-eady-instability">
-<h2><span class="section-number">4.1. </span>The Eady instability<a class="headerlink" href="#the-eady-instability" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-eady-instability">
+<h1><span class="section-number">4.1. </span>The Eady instability<a class="headerlink" href="#the-eady-instability" title="Link to this heading">#</a></h1>
 <p>We use Dedalus to solve the classic Eady baroclinic instability problem.
 For the Eady problem, the PV is assumed to be zero. Therefore we only
 have the advection of the buoyancy on the top and bottom. We refer to
@@ -536,16 +498,16 @@ algebraic solution. Here we use Dedalus to recover their result.</p>
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: Add(Add(Mul(Mul((-0-1j), &lt;Field 140298416520752&gt;), &lt;Field 140299673696896&gt;), Mul(-1, Mul(Mul(1j, &lt;Field 140298411826512&gt;), &lt;Field 140299673696896&gt;))), Mul(-1, interp(Mul(Mul(1j, &lt;Field 140298411826512&gt;), &lt;Field 140298421763296&gt;), z=-1))),
- &#39;LHS&#39;: Add(Add(Mul(Mul((-0-1j), &lt;Field 140298416520752&gt;), &lt;Field 140299673696896&gt;), Mul(-1, Mul(Mul(1j, &lt;Field 140298411826512&gt;), &lt;Field 140299673696896&gt;))), Mul(-1, interp(Mul(Mul(1j, &lt;Field 140298411826512&gt;), &lt;Field 140298421763296&gt;), z=-1))),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: Add(Add(Mul(Mul((-0-1j), &lt;Field 131850738384432&gt;), &lt;Field 131851886033232&gt;), Mul(-1, Mul(Mul(1j, &lt;Field 131850733706576&gt;), &lt;Field 131851886033232&gt;))), Mul(-1, interp(Mul(Mul(1j, &lt;Field 131850733706576&gt;), &lt;Field 131850743643360&gt;), z=-1))),
+ &#39;LHS&#39;: Add(Add(Mul(Mul((-0-1j), &lt;Field 131850738384432&gt;), &lt;Field 131851886033232&gt;), Mul(-1, Mul(Mul(1j, &lt;Field 131850733706576&gt;), &lt;Field 131851886033232&gt;))), Mul(-1, interp(Mul(Mul(1j, &lt;Field 131850733706576&gt;), &lt;Field 131850743643360&gt;), z=-1))),
  &#39;RHS&#39;: 0,
  &#39;condition&#39;: &#39;True&#39;,
  &#39;tensorsig&#39;: (),
  &#39;dtype&#39;: dtype(&#39;complex128&#39;),
  &#39;valid_modes&#39;: array([ True]),
- &#39;M&#39;: Mul((-0-1j), &lt;Field 140299673696896&gt;),
- &#39;L&#39;: Add(Mul(-1, Mul(Mul(1j, &lt;Field 140298411826512&gt;), &lt;Field 140299673696896&gt;)), Mul(-1, interp(Mul(Mul(1j, &lt;Field 140298411826512&gt;), &lt;Field 140298421763296&gt;), z=-1))),
- &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x7f9a103ca120&gt;,
+ &#39;M&#39;: Mul((-0-1j), &lt;Field 131851886033232&gt;),
+ &#39;L&#39;: Add(Mul(-1, Mul(Mul(1j, &lt;Field 131850733706576&gt;), &lt;Field 131851886033232&gt;)), Mul(-1, interp(Mul(Mul(1j, &lt;Field 131850733706576&gt;), &lt;Field 131850743643360&gt;), z=-1))),
+ &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x77eb28da6120&gt;,
  &#39;matrix_dependence&#39;: array([ True]),
  &#39;matrix_coupling&#39;: array([ True])}
 </pre></div>
@@ -588,403 +550,403 @@ algebraic solution. Here we use Dedalus to recover their result.</p>
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,203 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:29,813 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,244 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:29,889 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,282 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:29,961 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,318 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,034 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,355 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,105 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,390 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,181 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,427 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,260 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,463 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,358 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,497 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,445 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,535 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,539 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,573 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,627 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,607 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,709 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,644 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,793 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,680 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,876 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,714 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:30,960 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,753 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,044 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,794 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,120 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,838 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,194 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,881 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,266 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,928 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,332 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:29,974 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,393 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,015 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.5e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,453 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,057 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,516 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,099 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,586 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,137 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,646 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,176 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.5e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,706 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,215 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,764 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,252 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,821 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,291 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,883 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,328 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,940 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,364 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:31,996 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,401 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,055 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,438 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,109 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,474 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,164 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,511 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,225 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,551 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,278 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,588 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,330 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,628 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,384 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,670 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,436 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,709 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,489 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,745 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,544 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,783 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,598 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,821 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,652 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,860 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,704 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,900 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,756 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,940 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,810 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:30,976 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,862 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,009 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,915 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,045 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:32,970 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,083 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,024 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,119 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,086 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,157 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,141 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,194 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,198 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,230 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,256 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,273 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,321 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,318 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,398 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,366 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,472 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,409 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,545 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,458 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,625 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,496 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,704 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,536 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,787 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,574 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,861 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,611 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:33,936 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,647 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,017 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,683 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,107 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,721 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,192 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,759 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,287 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,799 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.5e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,382 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,839 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,468 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,880 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,555 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,916 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,645 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,953 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,753 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:31,990 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,844 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,028 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:34,931 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,068 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,019 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,112 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,127 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,153 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,240 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,196 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,340 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,236 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,439 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,277 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,547 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,319 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,639 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,361 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,717 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,401 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.5e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,792 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,443 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,865 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,479 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:35,945 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,516 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,019 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,552 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,093 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,588 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,166 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,626 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,235 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,662 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,310 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,698 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,375 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,735 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,439 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,771 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,502 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,810 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,567 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,849 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.5e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,630 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,887 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,701 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,926 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,767 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,960 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.5e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,838 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:32,997 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,908 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,033 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:36,978 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,070 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,049 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,108 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,122 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,146 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,191 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,185 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,260 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,223 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,355 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,262 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,443 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,299 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,538 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,338 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,639 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,378 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,735 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,416 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,831 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,454 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:37,934 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,491 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,028 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,529 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,120 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,565 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,209 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,598 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,315 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,634 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,402 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,669 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,486 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,708 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,578 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,745 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,662 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,780 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,739 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,815 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,819 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,849 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,897 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,889 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:38,971 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,935 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,051 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:33,977 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,129 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,020 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,202 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,065 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,275 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,101 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.3e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,343 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.6e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,139 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,428 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,177 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,488 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,215 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,551 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,253 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,615 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,288 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 8.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,675 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.5e+01/s
 </pre></div>
 </div>
 </div>
@@ -1009,7 +971,7 @@ algebraic solution. Here we use Dedalus to recover their result.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,331 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.6e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:39,749 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
 </div>
@@ -1081,9 +1043,9 @@ algebraic solution. Here we use Dedalus to recover their result.</p>
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: Add(Convert(&lt;Field 140298411867168&gt;), Mul(-1, Diff(&lt;Field 140298421763296&gt;))),
- &#39;LHS&#39;: &lt;Field 140298411867168&gt;,
- &#39;RHS&#39;: Diff(&lt;Field 140298421763296&gt;),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: Add(Convert(&lt;Field 131850733730848&gt;), Mul(-1, Diff(&lt;Field 131850743643360&gt;))),
+ &#39;LHS&#39;: &lt;Field 131850733730848&gt;,
+ &#39;RHS&#39;: Diff(&lt;Field 131850743643360&gt;),
  &#39;condition&#39;: &#39;True&#39;,
  &#39;tensorsig&#39;: (),
  &#39;dtype&#39;: dtype(&#39;complex128&#39;),
@@ -1102,9 +1064,9 @@ algebraic solution. Here we use Dedalus to recover their result.</p>
          True,  True,  True,  True,  True,  True,  True,  True,  True,
          True,  True,  True,  True,  True,  True,  True,  True,  True,
          True,  True]),
- &#39;L&#39;: Convert(&lt;Field 140298411867168&gt;),
- &#39;F&#39;: Diff(&lt;Field 140298421763296&gt;),
- &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x7f99c4fedf90&gt;,
+ &#39;L&#39;: Convert(&lt;Field 131850733730848&gt;),
+ &#39;F&#39;: Diff(&lt;Field 131850743643360&gt;),
+ &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x77eae4245f90&gt;,
  &#39;matrix_dependence&#39;: array([ True]),
  &#39;matrix_coupling&#39;: array([ True])}
 </pre></div>
@@ -1123,7 +1085,7 @@ algebraic solution. Here we use Dedalus to recover their result.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 10:20:34,965 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:40,681 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.5e+01/s
 </pre></div>
 </div>
 </div>
@@ -1164,7 +1126,6 @@ algebraic solution. Here we use Dedalus to recover their result.</p>
 </div>
 <p>The below plot matches exactly <span id="id4">Vallis [<a class="reference internal" href="../intro_n_conc/references.html#id5" title="Geoffrey K. Vallis. Atmospheric and Oceanic Fluid Dynamics: Fundamentals and Large-Scale Circulation. Cambridge University Press, Cambridge, 2 edition, 2017. ISBN 978-1-107-06550-5. doi:10.1017/9781107588417.">2017</a>]</span> Fig. 9.11. This is left as an excercise for the reader.</p>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1197,20 +1158,20 @@ algebraic solution. Here we use Dedalus to recover their result.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Baroclinic_mode/Baroclinic_mode.html"
+       href="3DQG_Linstab_doc.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Baroclinic modes for arbitrary stratification</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Linear instability analysis of 3DQG baroclinic instability</p>
       </div>
     </a>
     <a class="right-next"
-       href="../intro_n_conc/references.html"
+       href="Chatney_doc.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Bibliography</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>The ocean Charney instability</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1220,21 +1181,6 @@ algebraic solution. Here we use Dedalus to recover their result.</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-eady-instability">4.1. The Eady instability</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

@@ -149,15 +149,15 @@ In particular, we will use the notation of {cite:p}`Vallis_96a`:
 For example, the Boussinesq system under the geostrophic scaling reads
 (cf. {cite:p}`Vallis_17`(PE.1-4)): 
 \begin{align}
-    &\{\text{Ro}\}\left(\frac{\mathrm{D} u}{\mathrm{D} t}-\beta y v\right)-fv = -\phi_x,\\
-    &\{\text{Ro}\}\left(\frac{\mathrm{D} v}{\mathrm{D} t}+\beta y u\right)+fu = -\phi_y,\\
+    &\{\text{Ro}\}\left(\frac{\mathrm{D} u}{\mathrm{D} t}\right)-fv = -\phi_x,\\
+    &\{\text{Ro}\}\left(\frac{\mathrm{D} v}{\mathrm{D} t}\right)+fu = -\phi_y,\\
     &\phi_z = b,\\
-    &\{\text{Ro}\}\left(\frac{\mathrm{D} b}{\mathrm{D} t}\right)+\left\{\frac{\text{Ro}^2}{\text{Fr}^2}\right\}N^2w = 0,\\
+    &\{\text{Ro}\}\left(\frac{\mathrm{D} b}{\mathrm{D} t}\right)+\left\{\text{Bu}\right\}N^2w = 0,\\
     &u_x+v_y+w_z = 0
 \end{align}
 where we have the two nondimensional number
 \begin{align}
-    \text{Ro}:= \frac{U}{fL};\qquad \text{Fr}= \frac{U}{NH}.
+    \text{Ro}:= \frac{U}{fL};\qquad \text{Bu}= \left(\frac{NH}{fL}\right)^2.
 \end{align}
 
 ### Models to be implemented

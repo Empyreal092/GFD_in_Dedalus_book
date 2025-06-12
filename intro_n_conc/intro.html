@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -179,7 +179,11 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduciton</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">2. The barotropic vorticity model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">3. Baroclinic modes for arbitrary stratification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3DQG_Linstab/Eady_eigvalnvec.html">4. Linear instability analysis of 3DQG baroclinic instability</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3DQG_Linstab/3DQG_Linstab_doc.html">4. Linear instability analysis of 3DQG baroclinic instability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Eady_doc.html">4.1. The Eady instability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Chatney_doc.html">4.2. The ocean Charney instability</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">5. Bibliography</a></li>
 </ul>
 
@@ -431,7 +435,7 @@ Greene supercomputer, see this <a class="reference external" href="https://githu
 calculating the timestep. However, often in GFD models, velocity comes
 from the derivatives of a streamfunction, and is not a vector field in
 Dedalus. We implement a simple CFL based adaptive timestep that take in
-the velocity as separate scalar fields. See the 2D Euler code in <code class="xref std std-numref docutils literal notranslate"><span class="pre">chap:Baro_vort</span></code> for an example. Note that we
+the velocity as separate scalar fields. See the 2D Euler code in <a class="reference internal" href="../Barotropic_vort/doc.html#chap-baro-vort"><span class="std std-numref">Section 2</span></a> for an example. Note that we
 need to use the <code class="docutils literal notranslate"><span class="pre">d3.GlobalFlowProperty</span></code> to take maximum over MPI.</p>
 </section>
 <section id="calculating-spectrum">
@@ -552,18 +556,18 @@ following examples.</p>
 </div></blockquote>
 <p>For example, the Boussinesq system under the geostrophic scaling reads
 (cf. <span id="id5">[<a class="reference internal" href="references.html#id5" title="Geoffrey K. Vallis. Atmospheric and Oceanic Fluid Dynamics: Fundamentals and Large-Scale Circulation. Cambridge University Press, Cambridge, 2 edition, 2017. ISBN 978-1-107-06550-5. doi:10.1017/9781107588417.">Vallis, 2017</a>]</span>(PE.1-4)):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7acca0ff-cf76-493f-bed5-80f0a396d2d5">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-7acca0ff-cf76-493f-bed5-80f0a396d2d5" title="Permalink to this equation">#</a></span>\[\begin{align}
-    &amp;\{\text{Ro}\}\left(\frac{\mathrm{D} u}{\mathrm{D} t}-\beta y v\right)-fv = -\phi_x,\\
-    &amp;\{\text{Ro}\}\left(\frac{\mathrm{D} v}{\mathrm{D} t}+\beta y u\right)+fu = -\phi_y,\\
+<div class="amsmath math notranslate nohighlight" id="equation-b76924e3-9866-4d0f-bb8f-2b88a9cc4781">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-b76924e3-9866-4d0f-bb8f-2b88a9cc4781" title="Permalink to this equation">#</a></span>\[\begin{align}
+    &amp;\{\text{Ro}\}\left(\frac{\mathrm{D} u}{\mathrm{D} t}\right)-fv = -\phi_x,\\
+    &amp;\{\text{Ro}\}\left(\frac{\mathrm{D} v}{\mathrm{D} t}\right)+fu = -\phi_y,\\
     &amp;\phi_z = b,\\
-    &amp;\{\text{Ro}\}\left(\frac{\mathrm{D} b}{\mathrm{D} t}\right)+\left\{\frac{\text{Ro}^2}{\text{Fr}^2}\right\}N^2w = 0,\\
+    &amp;\{\text{Ro}\}\left(\frac{\mathrm{D} b}{\mathrm{D} t}\right)+\left\{\text{Bu}\right\}N^2w = 0,\\
     &amp;u_x+v_y+w_z = 0
 \end{align}\]</div>
 <p>where we have the two nondimensional number</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e08ebfe-4175-4b77-b9b5-bd30ec5b165d">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-6e08ebfe-4175-4b77-b9b5-bd30ec5b165d" title="Permalink to this equation">#</a></span>\[\begin{align}
-    \text{Ro}:= \frac{U}{fL};\qquad \text{Fr}= \frac{U}{NH}.
+<div class="amsmath math notranslate nohighlight" id="equation-c7550bba-c554-45ab-9285-72d799fd99a6">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-c7550bba-c554-45ab-9285-72d799fd99a6" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \text{Ro}:= \frac{U}{fL};\qquad \text{Bu}= \left(\frac{NH}{fL}\right)^2.
 \end{align}\]</div>
 </section>
 <section id="models-to-be-implemented">
