@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.2. The ocean Charney instability &#8212; GFD in Dedalus</title>
+    <title>5.2. The ocean Charney instability &#8212; GFD in Dedalus</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '3DQG_Linstab/Chatney_doc';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Bibliography" href="../intro_n_conc/references.html" />
-    <link rel="prev" title="4.1. The Eady instability" href="Eady_doc.html" />
+    <link rel="next" title="6. Bibliography" href="../intro_n_conc/references.html" />
+    <link rel="prev" title="5.1. The Eady instability" href="Eady_doc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,14 +177,15 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/intro.html">1. Introduciton</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">2. The barotropic vorticity model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">3. Baroclinic modes for arbitrary stratification</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="3DQG_Linstab_doc.html">4. Linear instability analysis of 3DQG baroclinic instability</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Eady_doc.html">4.1. The Eady instability</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. The ocean Charney instability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../isospectrum/test_isospectrum.html">2. Calculating the power density spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">3. The barotropic vorticity model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">4. Baroclinic modes for arbitrary stratification</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="3DQG_Linstab_doc.html">5. Linear instability analysis of 3DQG baroclinic instability</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Eady_doc.html">5.1. The Eady instability</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.2. The ocean Charney instability</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">5. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">6. Bibliography</a></li>
 </ul>
 
     </div>
@@ -380,9 +381,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idealized-profiles-inspired-by-the-ocean">4.2.1. Idealized profiles inspired by the ocean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-growth-rate-and-condition-for-instability">4.2.2. The growth rate and condition for instability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instability-profiles">4.2.3. Instability profiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idealized-profiles-inspired-by-the-ocean">5.2.1. Idealized profiles inspired by the ocean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-growth-rate-and-condition-for-instability">5.2.2. The growth rate and condition for instability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instability-profiles">5.2.3. Instability profiles</a></li>
 </ul>
             </nav>
         </div>
@@ -395,7 +396,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-ocean-charney-instability">
-<h1><span class="section-number">4.2. </span>The ocean Charney instability<a class="headerlink" href="#the-ocean-charney-instability" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5.2. </span>The ocean Charney instability<a class="headerlink" href="#the-ocean-charney-instability" title="Link to this heading">#</a></h1>
 <p>The Eady instability is an instability due to the interaction of two
 surface modes. We explore the effects of the interior PV gradient by
 studying the ocean Charney instability <span id="id1">[<a class="reference internal" href="../intro_n_conc/references.html#id16" title="Xavier Capet, Guillaume Roullet, Patrice Klein, and Guillaume Maze. Intensification of Upper-Ocean Submesoscale Turbulence through Charney Baroclinic Instability. Journal of Physical Oceanography, 46(11):3365–3384, November 2016. doi:10.1175/JPO-D-16-0050.1.">Capet <em>et al.</em>, 2016</a>]</span>. To begin, the
@@ -412,27 +413,27 @@ the ocean according to the global study of <span id="id3">[<a class="reference i
 the linear instability of both scenarios. For that, we ignore the bottom
 boundary by setting <span class="math notranslate nohighlight">\(b=0\)</span> at <span class="math notranslate nohighlight">\(z=-H\)</span>.</p>
 <section id="idealized-profiles-inspired-by-the-ocean">
-<h2><span class="section-number">4.2.1. </span>Idealized profiles inspired by the ocean<a class="headerlink" href="#idealized-profiles-inspired-by-the-ocean" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.2.1. </span>Idealized profiles inspired by the ocean<a class="headerlink" href="#idealized-profiles-inspired-by-the-ocean" title="Link to this heading">#</a></h2>
 <p>For our preliminary examples to demonstrate Dedalus, we use idealized
 nondimensional profiles. Converting the code to take real data would be
 simple.</p>
 <p>The 3DQG system above only needs stratification <span class="math notranslate nohighlight">\(N^2(z)\)</span> and mean
 velocity <span class="math notranslate nohighlight">\(U(z)\)</span> at vertical profiles as inputs. That is the data our
 data will take. We will use exponential stratification</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82af1ee9-9f68-41f1-8a04-b9ffd81df158">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-82af1ee9-9f68-41f1-8a04-b9ffd81df158" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b5477faa-3166-4016-b6d9-2d00fa1fc136">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-b5477faa-3166-4016-b6d9-2d00fa1fc136" title="Permalink to this equation">#</a></span>\[\begin{align}
     N^2(z) = N^2 e^{z/\delta} \quad\text{w/}\quad \delta=0.2.
 \end{align} \]</div>
 <p>For velocity we use</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd1ed196-1aa3-4c27-aee9-cb8c6cb4eec2">
-<span class="eqno">(4.5)<a class="headerlink" href="#equation-cd1ed196-1aa3-4c27-aee9-cb8c6cb4eec2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-aac0f8b4-31ca-4f63-9049-f37471723759">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-aac0f8b4-31ca-4f63-9049-f37471723759" title="Permalink to this equation">#</a></span>\[\begin{align}
     U(z) = (1+z-\delta)e^{z/\delta}/5.
 \end{align}\]</div>
 <p>We scale the velocity so that
 $<span class="math notranslate nohighlight">\({\frac{\partial}{\partial z}\left(\frac{f^2}{N^2}\frac{\partial\psi}{\partial z}\right)}=1.\)</span>$</p>
 </section>
 <section id="the-growth-rate-and-condition-for-instability">
-<h2><span class="section-number">4.2.2. </span>The growth rate and condition for instability<a class="headerlink" href="#the-growth-rate-and-condition-for-instability" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.2.2. </span>The growth rate and condition for instability<a class="headerlink" href="#the-growth-rate-and-condition-for-instability" title="Link to this heading">#</a></h2>
 <p>We can calculate the growth rate of the instability under different parameters of <span class="math notranslate nohighlight">\(\xi^{-2}\)</span>. This is done in the standalone file <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus_book/tree/main/3DQG_Linstab/Charney_evalparam.py"><code class="docutils literal notranslate"><span class="pre">Charney_evalparam.py</span></code></a> since the computation is too expansive to do in a notebook.</p>
 <p>Here we only present the code in the notebook that is a version of <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus_book/tree/main/3DQG_Linstab/Charney_evalparam.py"><code class="docutils literal notranslate"><span class="pre">Charney_evalparam.py</span></code></a> that only perform a subset of the calculation (only a subset of <span class="math notranslate nohighlight">\(k\)</span>).</p>
 <div class="cell tag_hide-cell docutils container">
@@ -450,7 +451,7 @@ $<span class="math notranslate nohighlight">\({\frac{\partial}{\partial z}\left(
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">colors</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">cmocean.cm</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cmo</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Ryan_Data/Tools/Python_Tool/ryan_mplstyle.mplstyle&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;../subroutine/ryan_mplstyle.mplstyle&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -606,53 +607,53 @@ $<span class="math notranslate nohighlight">\({\frac{\partial}{\partial z}\left(
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.+0.j]
-2025-06-12 16:04:59,547 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.0e+02/s
+2025-06-19 15:17:19,253 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:04:59,992 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.6e+00/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:19,649 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+00/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:01,674 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:21,153 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.5+0.j]
-2025-06-12 16:05:03,611 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.5e+02/s
+2025-06-19 15:17:22,665 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.0e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:03,671 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:22,706 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:05,937 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:24,680 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.+0.j]
-2025-06-12 16:05:08,197 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.9e+02/s
+2025-06-19 15:17:27,287 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.8e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:08,246 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.8e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:27,333 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:10,475 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:29,477 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.+0.j]
-2025-06-12 16:05:12,715 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.5e+02/s
+2025-06-19 15:17:31,465 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.9e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:12,765 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:31,507 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:15,003 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.7e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:33,626 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.5+0.j]
-2025-06-12 16:05:17,215 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.7e+02/s
+2025-06-19 15:17:35,713 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.9e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:17,260 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:35,760 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:19,429 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:37,791 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
 </pre></div>
 </div>
 <img alt="../_images/a951ac48b612b93bb5a975b23bd22da63f1249c8953490da9dafe82e50af8bb5.png" src="../_images/a951ac48b612b93bb5a975b23bd22da63f1249c8953490da9dafe82e50af8bb5.png" />
@@ -665,13 +666,13 @@ $<span class="math notranslate nohighlight">\({\frac{\partial}{\partial z}\left(
 compare the different cases of velocity shear, we flip the sign of
 <span class="math notranslate nohighlight">\(\beta\)</span> instead by using different signs of <span class="math notranslate nohighlight">\(\xi^{-2}\)</span>. To satisfy the
 CSP condition, we always need</p>
-<div class="amsmath math notranslate nohighlight" id="equation-221a6cf1-9103-4815-8085-4f60fad9b0c9">
-<span class="eqno">(4.6)<a class="headerlink" href="#equation-221a6cf1-9103-4815-8085-4f60fad9b0c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0492a9fe-ae57-4411-be82-80543c677fed">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-0492a9fe-ae57-4411-be82-80543c677fed" title="Permalink to this equation">#</a></span>\[\begin{align}
     Q_y = \{\xi^{-2}\}-1&lt;0.
 \end{align} \]</div>
 <p>Therefore we need</p>
-<div class="amsmath math notranslate nohighlight" id="equation-02904b81-28a4-4582-9a18-5510734d6df1">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-02904b81-28a4-4582-9a18-5510734d6df1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-caa26756-69a0-4a4e-b17c-3ab12acf7373">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-caa26756-69a0-4a4e-b17c-3ab12acf7373" title="Permalink to this equation">#</a></span>\[\begin{align}
     \{\xi^{-2}\}&lt;1.
 \end{align} \]</div>
 <p>Note that this means all westward mean velocity is
@@ -679,7 +680,7 @@ unstable, while eastward velocity has to be strong enough to be
 unstable. This matches our intuition.</p>
 </section>
 <section id="instability-profiles">
-<h2><span class="section-number">4.2.3. </span>Instability profiles<a class="headerlink" href="#instability-profiles" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.2.3. </span>Instability profiles<a class="headerlink" href="#instability-profiles" title="Link to this heading">#</a></h2>
 <p>We pick the two cases of <span class="math notranslate nohighlight">\(\{\xi^{-2}\}=\pm0.5\)</span> to look at the profile of
 the instability. Note that <span class="math notranslate nohighlight">\(\{\xi^{-2}\}\)</span> is eastward. We first plot the magnitude of the eigenvector
 of the fastest growing mode, a common value of interest for baroclinic
@@ -722,16 +723,16 @@ instability.</p>
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:21,833 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.5e+02/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:40,227 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.4e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:21,868 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:40,262 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:24,117 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.7e+02/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:42,291 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.7e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:24,154 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:42,325 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
 </pre></div>
 </div>
 </div>
@@ -813,11 +814,11 @@ instability.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:26,481 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.6e+02/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:44,724 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.5e+02/s
 </pre></div>
 </div>
 <img alt="../_images/dce6833cfe67329e63721a7e67b7190db511457d5fadcc58e7b86a8746a9df17.png" src="../_images/dce6833cfe67329e63721a7e67b7190db511457d5fadcc58e7b86a8746a9df17.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 16:05:26,631 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.4e+02/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:44,886 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.4e+02/s
 </pre></div>
 </div>
 <img alt="../_images/4fa1c51c6c1fd4af92f072cc285c2ddeeab605ad707e0831a862890cf433bd96.png" src="../_images/4fa1c51c6c1fd4af92f072cc285c2ddeeab605ad707e0831a862890cf433bd96.png" />
@@ -862,7 +863,7 @@ instability.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.1. </span>The Eady instability</p>
+        <p class="prev-next-title"><span class="section-number">5.1. </span>The Eady instability</p>
       </div>
     </a>
     <a class="right-next"
@@ -870,7 +871,7 @@ instability.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Bibliography</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Bibliography</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -890,9 +891,9 @@ instability.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idealized-profiles-inspired-by-the-ocean">4.2.1. Idealized profiles inspired by the ocean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-growth-rate-and-condition-for-instability">4.2.2. The growth rate and condition for instability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instability-profiles">4.2.3. Instability profiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idealized-profiles-inspired-by-the-ocean">5.2.1. Idealized profiles inspired by the ocean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-growth-rate-and-condition-for-instability">5.2.2. The growth rate and condition for instability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instability-profiles">5.2.3. Instability profiles</a></li>
 </ul>
   </nav></div>
 

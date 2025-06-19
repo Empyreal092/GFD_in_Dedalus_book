@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Baroclinic modes for arbitrary stratification &#8212; GFD in Dedalus</title>
+    <title>4. Baroclinic modes for arbitrary stratification &#8212; GFD in Dedalus</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Baroclinic_mode/Baroclinic_mode';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Linear instability analysis of 3DQG baroclinic instability" href="../3DQG_Linstab/3DQG_Linstab_doc.html" />
-    <link rel="prev" title="2. The barotropic vorticity model" href="../Barotropic_vort/doc.html" />
+    <link rel="next" title="5. Linear instability analysis of 3DQG baroclinic instability" href="../3DQG_Linstab/3DQG_Linstab_doc.html" />
+    <link rel="prev" title="3. The barotropic vorticity model" href="../Barotropic_vort/doc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,14 +177,15 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/intro.html">1. Introduciton</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">2. The barotropic vorticity model</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Baroclinic modes for arbitrary stratification</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3DQG_Linstab/3DQG_Linstab_doc.html">4. Linear instability analysis of 3DQG baroclinic instability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Eady_doc.html">4.1. The Eady instability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Chatney_doc.html">4.2. The ocean Charney instability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../isospectrum/test_isospectrum.html">2. Calculating the power density spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">3. The barotropic vorticity model</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Baroclinic modes for arbitrary stratification</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3DQG_Linstab/3DQG_Linstab_doc.html">5. Linear instability analysis of 3DQG baroclinic instability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Eady_doc.html">5.1. The Eady instability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Chatney_doc.html">5.2. The ocean Charney instability</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">5. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">6. Bibliography</a></li>
 </ul>
 
     </div>
@@ -383,12 +384,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="baroclinic-modes-for-arbitrary-stratification">
-<span id="file-types-notebooks"></span><h1><span class="section-number">3. </span>Baroclinic modes for arbitrary stratification<a class="headerlink" href="#baroclinic-modes-for-arbitrary-stratification" title="Link to this heading">#</a></h1>
+<span id="file-types-notebooks"></span><h1><span class="section-number">4. </span>Baroclinic modes for arbitrary stratification<a class="headerlink" href="#baroclinic-modes-for-arbitrary-stratification" title="Link to this heading">#</a></h1>
 <p>This is an simple example of the eigenvalue problem module of Dedalus.</p>
 <p>We solve the baroclinic mode for arbitrary stratification profiles. That
 is, we solve the Sturm–Liouville problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f56bf0ca-b7ac-42dc-8fa4-342a9a409b13">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-f56bf0ca-b7ac-42dc-8fa4-342a9a409b13" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-abd0989f-bd94-4fee-8765-0a2df1caebb1">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-abd0989f-bd94-4fee-8765-0a2df1caebb1" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{\mathrm{d}}{\mathrm{d}z}\left( \frac{f^2}{N^2}\frac{\mathrm{d}\psi}{\mathrm{d}z} \right) = -\lambda^2\psi\\
 \text{with}\qquad &amp;\frac{\mathrm{d}\psi}{\mathrm{d}z}(z=0)=\frac{\mathrm{d}\psi}{\mathrm{d}z}(z=-H)=0
 \end{align}\]</div>
@@ -404,7 +405,7 @@ physical values only change the eigenvalues by a constant.</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">colors</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">cmocean.cm</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cmo</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Ryan_Data/Tools/Python_Tool/ryan_mplstyle.mplstyle&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;../subroutine/ryan_mplstyle.mplstyle&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -471,16 +472,16 @@ physical values only change the eigenvalues by a constant.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: interp(Diff(&lt;Field 124434877355408&gt;), z=-6.283185307179586),
- &#39;LHS&#39;: interp(Diff(&lt;Field 124434877355408&gt;), z=-6.283185307179586),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: interp(Diff(&lt;Field 134614680835152&gt;), z=-6.283185307179586),
+ &#39;LHS&#39;: interp(Diff(&lt;Field 134614680835152&gt;), z=-6.283185307179586),
  &#39;RHS&#39;: 0,
  &#39;condition&#39;: &#39;True&#39;,
  &#39;tensorsig&#39;: (),
  &#39;dtype&#39;: numpy.complex128,
  &#39;valid_modes&#39;: array([ True]),
  &#39;M&#39;: 0,
- &#39;L&#39;: interp(Diff(&lt;Field 124434877355408&gt;), z=-6.283185307179586),
- &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x712c40a99450&gt;,
+ &#39;L&#39;: interp(Diff(&lt;Field 134614680835152&gt;), z=-6.283185307179586),
+ &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x7a6e6c3b9310&gt;,
  &#39;matrix_dependence&#39;: array([ True]),
  &#39;matrix_coupling&#39;: array([ True])}
 </pre></div>
@@ -496,7 +497,7 @@ physical values only change the eigenvalues by a constant.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-12 15:13:47,252 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.2e+00/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:18:00,995 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.4e+00/s
 </pre></div>
 </div>
 </div>
@@ -581,7 +582,7 @@ particular, this code reproduces the functionality of
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>The barotropic vorticity model</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>The barotropic vorticity model</p>
       </div>
     </a>
     <a class="right-next"
@@ -589,7 +590,7 @@ particular, this code reproduces the functionality of
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Linear instability analysis of 3DQG baroclinic instability</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Linear instability analysis of 3DQG baroclinic instability</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

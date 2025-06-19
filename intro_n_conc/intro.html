@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro_n_conc/intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. The barotropic vorticity model" href="../Barotropic_vort/doc.html" />
+    <link rel="next" title="2. Calculating the power density spectrum" href="../isospectrum/test_isospectrum.html" />
     <link rel="prev" title="Welcome to GFD in Dedalus" href="../landing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -177,14 +177,15 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduciton</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">2. The barotropic vorticity model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">3. Baroclinic modes for arbitrary stratification</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3DQG_Linstab/3DQG_Linstab_doc.html">4. Linear instability analysis of 3DQG baroclinic instability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Eady_doc.html">4.1. The Eady instability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Chatney_doc.html">4.2. The ocean Charney instability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../isospectrum/test_isospectrum.html">2. Calculating the power density spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Barotropic_vort/doc.html">3. The barotropic vorticity model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">4. Baroclinic modes for arbitrary stratification</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3DQG_Linstab/3DQG_Linstab_doc.html">5. Linear instability analysis of 3DQG baroclinic instability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Eady_doc.html">5.1. The Eady instability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Chatney_doc.html">5.2. The ocean Charney instability</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">5. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">6. Bibliography</a></li>
 </ul>
 
     </div>
@@ -435,7 +436,7 @@ Greene supercomputer, see this <a class="reference external" href="https://githu
 calculating the timestep. However, often in GFD models, velocity comes
 from the derivatives of a streamfunction, and is not a vector field in
 Dedalus. We implement a simple CFL based adaptive timestep that take in
-the velocity as separate scalar fields. See the 2D Euler code in <a class="reference internal" href="../Barotropic_vort/doc.html#chap-baro-vort"><span class="std std-numref">Section 2</span></a> for an example. Note that we
+the velocity as separate scalar fields. See the 2D Euler code in <a class="reference internal" href="../Barotropic_vort/doc.html#chap-baro-vort"><span class="std std-numref">Section 3</span></a> for an example. Note that we
 need to use the <code class="docutils literal notranslate"><span class="pre">d3.GlobalFlowProperty</span></code> to take maximum over MPI.</p>
 </section>
 <section id="calculating-spectrum">
@@ -627,11 +628,11 @@ by <span id="id8">[<a class="reference internal" href="references.html#id9" titl
       </div>
     </a>
     <a class="right-next"
-       href="../Barotropic_vort/doc.html"
+       href="../isospectrum/test_isospectrum.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>The barotropic vorticity model</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Calculating the power density spectrum</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
