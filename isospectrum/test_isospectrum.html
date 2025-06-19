@@ -400,8 +400,8 @@ document.write(`
 <h2><span class="section-number">2.1. </span>In one-dimension<a class="headerlink" href="#in-one-dimension" title="Link to this heading">#</a></h2>
 <p>We first start with a common analysis of turbulent fields, especially those that are perdioic and easily represented using Fourier modes: the power density spectrum.</p>
 <p>We begin with an 1D real field <span class="math notranslate nohighlight">\(\psi(x)\in\mathbb{R}\)</span> in a domain of <span class="math notranslate nohighlight">\(x\in [0,L]\)</span>. We can obtain its Fourier coefficient <span class="math notranslate nohighlight">\(\hat \psi(k)\)</span> using FFT. Then we have the Parseval’s theorem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-724895f5-4f00-4ed1-b0f3-23b30d4d68c9">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-724895f5-4f00-4ed1-b0f3-23b30d4d68c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b888799a-f45a-4094-b39f-d7867dcc9922">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-b888799a-f45a-4094-b39f-d7867dcc9922" title="Permalink to this equation">#</a></span>\[\begin{align}
     \sum_{k} |\hat \psi(k)|^2 = \frac{1}{L}\int^{L}_0 |\psi(x,y)|^2 \mathrm{d}x.
 \end{align}\]</div>
 <p>Note that the right-hand-side is the spatial average of <span class="math notranslate nohighlight">\(|\psi(x,y)|^2\)</span>. This is why we use the name “density” in “power density spectrum”.</p>
@@ -485,7 +485,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/66ecbba029cdaedb62a06daa639728046fc610f97bfbdfa6779e63490d3eb498.png" src="../_images/66ecbba029cdaedb62a06daa639728046fc610f97bfbdfa6779e63490d3eb498.png" />
+<img alt="../_images/88df21633ca886ff41b4e36f43dce5ac4d7a9c5211adc0883f49762c77502bbe.png" src="../_images/88df21633ca886ff41b4e36f43dce5ac4d7a9c5211adc0883f49762c77502bbe.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -498,8 +498,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6227029850907787
-[0.31261328]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5210430337007141
+[0.27409406]
 </pre></div>
 </div>
 </div>
@@ -524,8 +524,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.31261328253981957
-0.3126132825398196
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2740940577253219
+0.27409405772532197
 </pre></div>
 </div>
 </div>
@@ -578,7 +578,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/db2891418d9884d8568a0def6e1afa18a76e15a4e8026718ebb9cdef277104c7.png" src="../_images/db2891418d9884d8568a0def6e1afa18a76e15a4e8026718ebb9cdef277104c7.png" />
+<img alt="../_images/a033fe1bb7f44c1bcb66820dc34b55222fd3adfd35d70203f2708e8a35f27bcd.png" src="../_images/a033fe1bb7f44c1bcb66820dc34b55222fd3adfd35d70203f2708e8a35f27bcd.png" />
 </div>
 </div>
 <p>The final test of our algorithm is whether is still preserved the variance of the original data (satisfied Parseval’s).</p>
@@ -591,8 +591,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.31261328253981957
-0.3126132825398196
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2740940577253219
+0.27409405772532197
 </pre></div>
 </div>
 </div>
@@ -602,8 +602,8 @@ document.write(`
 <section id="in-two-dimensions">
 <h2><span class="section-number">2.2. </span>In two-dimensions<a class="headerlink" href="#in-two-dimensions" title="Link to this heading">#</a></h2>
 <p>Assume we have a 2D doubly-perdioic field <span class="math notranslate nohighlight">\(\psi(x,y)\in\mathbb{R}\)</span> and its Fourier coefficient <span class="math notranslate nohighlight">\(\hat \psi(k,\ell)\)</span>. The Parseval’s theorem now states</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9e9c2c1-0c0a-427c-8423-ba4915fb0451">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-a9e9c2c1-0c0a-427c-8423-ba4915fb0451" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d10938c1-535f-4516-bcf4-d69b84a5d223">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-d10938c1-535f-4516-bcf4-d69b84a5d223" title="Permalink to this equation">#</a></span>\[\begin{align}
     \sum_{k,\ell} |\hat \psi(k,\ell)|^2 = \frac{1}{Lx*Ly}\int^{L_y}_0\int^{L_x}_0 |\psi(x,y)|^2 \mathrm{d}x\mathrm{d}y
 \end{align}\]</div>
 <p>We test this in Dedalus using an example that has <span class="math notranslate nohighlight">\(Lx\neq Ly\)</span> and differing resolution each side.</p>
@@ -684,7 +684,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/37fd02d84d2aded880d3602b4cd0d6a901d0ee3310a982ff09dff647c771e35e.png" src="../_images/37fd02d84d2aded880d3602b4cd0d6a901d0ee3310a982ff09dff647c771e35e.png" />
+<img alt="../_images/d1728e635ec5ff0fd917a8e778c512c8fe4cb9db754369cd2102e5a5865ef9af.png" src="../_images/d1728e635ec5ff0fd917a8e778c512c8fe4cb9db754369cd2102e5a5865ef9af.png" />
 </div>
 </div>
 <p>2D real fields also requires factors to match the Parseval’s theorem, and it is slightly more complicated. The factor should be <span class="math notranslate nohighlight">\(1/4\)</span>; except when <span class="math notranslate nohighlight">\(k=0\)</span> xor <span class="math notranslate nohighlight">\(\ell=0\)</span>, it should be <span class="math notranslate nohighlight">\(1/2\)</span>; and when <span class="math notranslate nohighlight">\(k=0\)</span> and <span class="math notranslate nohighlight">\(\ell=0\)</span>, it should be one.</p>
@@ -704,8 +704,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13165783858790503
-0.13165783858790503
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13964394274888056
+0.13964394274888056
 </pre></div>
 </div>
 </div>
@@ -757,8 +757,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13165783858790503
-0.13165783858790503
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1396439427488806
+0.13964394274888056
 </pre></div>
 </div>
 </div>
@@ -776,12 +776,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/163fab9b65c392cc63f4d8261168f0ec38bee00c08ff57d5f94692037ec5028b.png" src="../_images/163fab9b65c392cc63f4d8261168f0ec38bee00c08ff57d5f94692037ec5028b.png" />
+<img alt="../_images/5905511cf784c364b02f95c715c7427df29a7fabcea575ae44b07084d1f0a5da.png" src="../_images/5905511cf784c364b02f95c715c7427df29a7fabcea575ae44b07084d1f0a5da.png" />
 </div>
 </div>
 <p>Everything checks out.</p>
+<p>However, be careful that since the isotropic spectrum only take account of the variance for <span class="math notranslate nohighlight">\(k,\ell&lt;\min(k,\ell)\)</span>, variance with the largest wavenumber will not be accounted for in the isotropic spectrum. In most cases, they should be ignoored anyway, by the anti-aliasing.</p>
 <p>We wrap up out function for 1D and 2D into into one function that one can just call <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus_book/isospectrum/isospectrum.py"><code class="docutils literal notranslate"><span class="pre">isospectrum.py</span></code></a>.</p>
-<p>The work is not done. The above code is not tested for complex flieds. It is also not tested for higher dimensional fields. I encourage you to contribute if you are interested!</p>
+<p>The work is not done. The above code is not tested for complex fields. It is also not tested for higher dimensional fields. I encourage you to contribute if you are interested!</p>
 </section>
 </section>
 

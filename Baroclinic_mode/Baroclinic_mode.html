@@ -388,8 +388,8 @@ document.write(`
 <p>This is an simple example of the eigenvalue problem module of Dedalus.</p>
 <p>We solve the baroclinic mode for arbitrary stratification profiles. That
 is, we solve the Sturm–Liouville problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-abd0989f-bd94-4fee-8765-0a2df1caebb1">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-abd0989f-bd94-4fee-8765-0a2df1caebb1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f053d2a0-5395-40ab-8de8-550502a8c94c">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-f053d2a0-5395-40ab-8de8-550502a8c94c" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{\mathrm{d}}{\mathrm{d}z}\left( \frac{f^2}{N^2}\frac{\mathrm{d}\psi}{\mathrm{d}z} \right) = -\lambda^2\psi\\
 \text{with}\qquad &amp;\frac{\mathrm{d}\psi}{\mathrm{d}z}(z=0)=\frac{\mathrm{d}\psi}{\mathrm{d}z}(z=-H)=0
 \end{align}\]</div>
@@ -405,7 +405,7 @@ physical values only change the eigenvalues by a constant.</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">colors</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">cmocean.cm</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cmo</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;../subroutine/ryan_mplstyle.mplstyle&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;/mnt/c/Ryan_Data/Tools/Python_Tool/ryan_mplstyle.mplstyle&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -472,16 +472,16 @@ physical values only change the eigenvalues by a constant.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: interp(Diff(&lt;Field 134614680835152&gt;), z=-6.283185307179586),
- &#39;LHS&#39;: interp(Diff(&lt;Field 134614680835152&gt;), z=-6.283185307179586),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eqn&#39;: interp(Diff(&lt;Field 126645046760848&gt;), z=-6.283185307179586),
+ &#39;LHS&#39;: interp(Diff(&lt;Field 126645046760848&gt;), z=-6.283185307179586),
  &#39;RHS&#39;: 0,
  &#39;condition&#39;: &#39;True&#39;,
  &#39;tensorsig&#39;: (),
  &#39;dtype&#39;: numpy.complex128,
  &#39;valid_modes&#39;: array([ True]),
  &#39;M&#39;: 0,
- &#39;L&#39;: interp(Diff(&lt;Field 134614680835152&gt;), z=-6.283185307179586),
- &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x7a6e6c3b9310&gt;,
+ &#39;L&#39;: interp(Diff(&lt;Field 126645046760848&gt;), z=-6.283185307179586),
+ &#39;domain&#39;: &lt;dedalus.core.domain.Domain at 0x732ed9065450&gt;,
  &#39;matrix_dependence&#39;: array([ True]),
  &#39;matrix_coupling&#39;: array([ True])}
 </pre></div>
@@ -497,7 +497,7 @@ physical values only change the eigenvalues by a constant.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:18:00,995 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.4e+00/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:50:35,688 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.3e+00/s
 </pre></div>
 </div>
 </div>
