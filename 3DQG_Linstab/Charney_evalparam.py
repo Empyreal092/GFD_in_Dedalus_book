@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 import cmocean.cm as cmo
 
-plt.style.use('/mnt/c/Ryan_Data/Tools/Python_Tool/ryan_mplstyle.mplstyle')
+plt.style.use('../subroutine/ryan_mplstyle.mplstyle')
 
 # Physical Parameters
 Ub = 1

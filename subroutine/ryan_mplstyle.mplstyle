@@ -1,0 +1,11 @@
+text.usetex : True
+font.family : serif
+font.serif : Times
+legend.fontsize : 8
+axes.labelsize : 10
+axes.titlesize : 10
+font.size : 10
+lines.linewidth : 1
+axes.prop_cycle : cycler(color=[(0,0.4453125,0.6953125),(0.83203125,0.3671875,0.),(0.,0.6171875,0.44921875),(0.8984375,0.62109375,0.),(0.796875, 0.47265625, 0.65234375),(0.9375,0.890625,0.2578125),(0.3359375 , 0.703125, 0.91015625),(0.46875,0.46875,0.46875)])
+axes.xmargin : 0
+axes.ymargin : 0

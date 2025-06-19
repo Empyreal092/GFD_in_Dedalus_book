@@ -15,7 +15,6 @@ dtype = np.float64
 dealias = 3/2
 stop_sim_time = 30
 timestepper = d3.RK443
-dtype = np.float64
 
 #Physical Parameters
 delx = Lx/Nx
