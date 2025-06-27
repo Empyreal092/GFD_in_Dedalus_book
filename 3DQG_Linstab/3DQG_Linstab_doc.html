@@ -182,7 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">4. Baroclinic modes for arbitrary stratification</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">5. Linear instability analysis of 3DQG baroclinic instability</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Eady_doc.html">5.1. The Eady instability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chatney_doc.html">5.2. The ocean Charney instability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Charney_doc.html">5.2. The ocean Charney instability</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">6. Bibliography</a></li>
@@ -391,15 +391,15 @@ baroclinic instability in the quasi-geostrophic (QG) model.</p>
 velocity <span class="math notranslate nohighlight">\(U(z)\)</span>. We have the surface meridional buoyancy gradient
 <span class="math notranslate nohighlight">\(B_y(z=-H, 0)\)</span> from thermal wind balance. This also implies a mean
 meridional PV gradient</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e96737fb-5584-4b61-ab01-d803f37d3152">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-e96737fb-5584-4b61-ab01-d803f37d3152" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-68e94eb0-76f0-44d1-8389-402a0bb2b3c2">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-68e94eb0-76f0-44d1-8389-402a0bb2b3c2" title="Permalink to this equation">#</a></span>\[\begin{align}
     Q_y = \{\xi^{-2}\}\beta-\nabla^2 U-\{\text{Bu}^{-1}\}\frac{\mathrm{d}}{\mathrm{d} z}\left(\frac{f^2}{N^2}\frac{\mathrm{d} U}{\mathrm{d} z}\right)
 \end{align}\]</div>
 <p>where we ignore the <span class="math notranslate nohighlight">\(\nabla^2 U\)</span> term with our
 assumption that <span class="math notranslate nohighlight">\(U\)</span> is horizontally constant. Now we have the 3DQG
 system:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-81eb243d-4124-4b85-8941-2ee9d831dd63">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-81eb243d-4124-4b85-8941-2ee9d831dd63" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0a2d1184-ef17-4e4b-88fe-61a7d444e435">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-0a2d1184-ef17-4e4b-88fe-61a7d444e435" title="Permalink to this equation">#</a></span>\[\begin{align}
     &amp;\frac{\mathrm{D} q}{\mathrm{D} t}+Uq_x+vQ_y = 0; \\
     &amp;\frac{\mathrm{D} b}{\mathrm{D} t}+Ub_x+vB_y = 0 \quad\text{at}\quad z=-H, 0; \\
     &amp;\nabla^2\psi + \{\text{Bu}^{-1}\}\frac{\partial}{\partial z}\left(\frac{f^2}{N^2}\frac{\partial\psi}{\partial z}\right) = q \\
@@ -407,8 +407,8 @@ system:</p>
     &amp;u = -\psi_y, \quad v = \psi_x.
 \end{align}\]</div>
 <p>We use the nondimensional number</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6c1c73a4-2ad0-48b7-9ce1-a267cd853e21">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-6c1c73a4-2ad0-48b7-9ce1-a267cd853e21" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d810f965-614d-4c10-a29e-e8732191fb78">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-d810f965-614d-4c10-a29e-e8732191fb78" title="Permalink to this equation">#</a></span>\[\begin{align}
     \xi^{-2} = \frac{f_0 L}{U} \quad\text{,}\quad \text{Bu} = \frac{N(0)^2H^2}{f_0^2L^2} = \frac{L_{d}^2}{L^2}.
 \end{align}\]</div>
 <p>Finally for the linear instability analysis we form a

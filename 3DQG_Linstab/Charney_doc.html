@@ -59,7 +59,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '3DQG_Linstab/Chatney_doc';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3DQG_Linstab/Charney_doc';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6. Bibliography" href="../intro_n_conc/references.html" />
@@ -257,7 +257,7 @@
       
       
       
-      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book/issues/new?title=Issue%20on%20page%20%2F3DQG_Linstab/Chatney_doc.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Empyreal092/GFD_in_Dedalus_book/issues/new?title=Issue%20on%20page%20%2F3DQG_Linstab/Charney_doc.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="../_sources/3DQG_Linstab/Chatney_doc.ipynb" target="_blank"
+      <li><a href="../_sources/3DQG_Linstab/Charney_doc.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -420,13 +420,13 @@ simple.</p>
 <p>The 3DQG system above only needs stratification <span class="math notranslate nohighlight">\(N^2(z)\)</span> and mean
 velocity <span class="math notranslate nohighlight">\(U(z)\)</span> at vertical profiles as inputs. That is the data our
 data will take. We will use exponential stratification</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5477faa-3166-4016-b6d9-2d00fa1fc136">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-b5477faa-3166-4016-b6d9-2d00fa1fc136" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-21a1e429-cd04-428d-a63b-5528c73cc5fa">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-21a1e429-cd04-428d-a63b-5528c73cc5fa" title="Permalink to this equation">#</a></span>\[\begin{align}
     N^2(z) = N^2 e^{z/\delta} \quad\text{w/}\quad \delta=0.2.
 \end{align} \]</div>
 <p>For velocity we use</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aac0f8b4-31ca-4f63-9049-f37471723759">
-<span class="eqno">(5.5)<a class="headerlink" href="#equation-aac0f8b4-31ca-4f63-9049-f37471723759" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-41b2277c-422e-41ae-b371-c2fdd1f33e9e">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-41b2277c-422e-41ae-b371-c2fdd1f33e9e" title="Permalink to this equation">#</a></span>\[\begin{align}
     U(z) = (1+z-\delta)e^{z/\delta}/5.
 \end{align}\]</div>
 <p>We scale the velocity so that
@@ -434,8 +434,8 @@ $<span class="math notranslate nohighlight">\({\frac{\partial}{\partial z}\left(
 </section>
 <section id="the-growth-rate-and-condition-for-instability">
 <h2><span class="section-number">5.2.2. </span>The growth rate and condition for instability<a class="headerlink" href="#the-growth-rate-and-condition-for-instability" title="Link to this heading">#</a></h2>
-<p>We can calculate the growth rate of the instability under different parameters of <span class="math notranslate nohighlight">\(\xi^{-2}\)</span>. This is done in the standalone file <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus_book/tree/main/3DQG_Linstab/Charney_evalparam.py"><code class="docutils literal notranslate"><span class="pre">Charney_evalparam.py</span></code></a> since the computation is too expansive to do in a notebook.</p>
-<p>Here we only present the code in the notebook that is a version of <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus_book/tree/main/3DQG_Linstab/Charney_evalparam.py"><code class="docutils literal notranslate"><span class="pre">Charney_evalparam.py</span></code></a> that only perform a subset of the calculation (only a subset of <span class="math notranslate nohighlight">\(k\)</span>).</p>
+<p>We can calculate the growth rate of the instability under different parameters of <span class="math notranslate nohighlight">\(\xi^{-2}\)</span>. This is done in the standalone file <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus_book/tree/main/book/3DQG_Linstab/Charney_evalparam.py"><code class="docutils literal notranslate"><span class="pre">Charney_evalparam.py</span></code></a> since the computation is too expansive to do in a notebook.</p>
+<p>Here we only present the code in the notebook that is a version of <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus_book/tree/main/book/3DQG_Linstab/Charney_evalparam.py"><code class="docutils literal notranslate"><span class="pre">Charney_evalparam.py</span></code></a> that only perform a subset of the calculation (only a subset of <span class="math notranslate nohighlight">\(k\)</span>).</p>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -607,53 +607,53 @@ $<span class="math notranslate nohighlight">\({\frac{\partial}{\partial z}\left(
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.+0.j]
-2025-06-19 15:17:19,253 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 7.2e+01/s
+2025-06-27 17:40:56,534 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.0e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:19,649 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+00/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:40:56,743 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 5.9e+00/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:21,153 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:40:57,530 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.5+0.j]
-2025-06-19 15:17:22,665 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.0e+02/s
+2025-06-27 17:40:58,323 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.6e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:22,706 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:40:58,346 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:24,680 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:40:59,343 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.+0.j]
-2025-06-19 15:17:27,287 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.8e+02/s
+2025-06-27 17:41:00,347 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.3e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:27,333 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.0e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:00,371 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.2e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:29,477 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.5e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:01,346 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.5e+01/s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.+0.j]
-2025-06-19 15:17:31,465 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.9e+02/s
+2025-06-27 17:41:02,332 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:31,507 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:02,356 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.3e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:33,626 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.2e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:03,337 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.6e+01/s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.5+0.j]
-2025-06-19 15:17:35,713 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.9e+02/s
+2025-06-27 17:41:04,338 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:35,760 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.9e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:04,361 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.7e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:37,791 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.4e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:05,362 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.0e+01/s
 </pre></div>
 </div>
 <img alt="../_images/a951ac48b612b93bb5a975b23bd22da63f1249c8953490da9dafe82e50af8bb5.png" src="../_images/a951ac48b612b93bb5a975b23bd22da63f1249c8953490da9dafe82e50af8bb5.png" />
@@ -666,13 +666,13 @@ $<span class="math notranslate nohighlight">\({\frac{\partial}{\partial z}\left(
 compare the different cases of velocity shear, we flip the sign of
 <span class="math notranslate nohighlight">\(\beta\)</span> instead by using different signs of <span class="math notranslate nohighlight">\(\xi^{-2}\)</span>. To satisfy the
 CSP condition, we always need</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0492a9fe-ae57-4411-be82-80543c677fed">
-<span class="eqno">(5.6)<a class="headerlink" href="#equation-0492a9fe-ae57-4411-be82-80543c677fed" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d918a525-09d1-4413-bbbe-23843c692058">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-d918a525-09d1-4413-bbbe-23843c692058" title="Permalink to this equation">#</a></span>\[\begin{align}
     Q_y = \{\xi^{-2}\}-1&lt;0.
 \end{align} \]</div>
 <p>Therefore we need</p>
-<div class="amsmath math notranslate nohighlight" id="equation-caa26756-69a0-4a4e-b17c-3ab12acf7373">
-<span class="eqno">(5.7)<a class="headerlink" href="#equation-caa26756-69a0-4a4e-b17c-3ab12acf7373" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-53f1c117-8ef9-49c8-9d8f-04b5864faaa7">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-53f1c117-8ef9-49c8-9d8f-04b5864faaa7" title="Permalink to this equation">#</a></span>\[\begin{align}
     \{\xi^{-2}\}&lt;1.
 \end{align} \]</div>
 <p>Note that this means all westward mean velocity is
@@ -723,16 +723,16 @@ instability.</p>
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:40,227 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.4e+02/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:06,533 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.4e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:40,262 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:06,549 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.8e+01/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:42,291 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.7e+02/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:07,539 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 4.0e+02/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:42,325 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.1e+01/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:07,557 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 6.4e+01/s
 </pre></div>
 </div>
 </div>
@@ -814,11 +814,11 @@ instability.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:44,724 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.5e+02/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:08,636 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 2.5e+02/s
 </pre></div>
 </div>
 <img alt="../_images/dce6833cfe67329e63721a7e67b7190db511457d5fadcc58e7b86a8746a9df17.png" src="../_images/dce6833cfe67329e63721a7e67b7190db511457d5fadcc58e7b86a8746a9df17.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-19 15:17:44,886 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 1.4e+02/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-06-27 17:41:08,740 subsystems 0/1 INFO :: Building subproblem matrices 1/1 (~100%) Elapsed: 0s, Remaining: 0s, Rate: 3.3e+02/s
 </pre></div>
 </div>
 <img alt="../_images/4fa1c51c6c1fd4af92f072cc285c2ddeeab605ad707e0831a862890cf433bd96.png" src="../_images/4fa1c51c6c1fd4af92f072cc285c2ddeeab605ad707e0831a862890cf433bd96.png" />

@@ -182,7 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">4. Baroclinic modes for arbitrary stratification</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../3DQG_Linstab/3DQG_Linstab_doc.html">5. Linear instability analysis of 3DQG baroclinic instability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Eady_doc.html">5.1. The Eady instability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Chatney_doc.html">5.2. The ocean Charney instability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Charney_doc.html">5.2. The ocean Charney instability</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">6. Bibliography</a></li>
@@ -398,13 +398,13 @@ document.write(`
 <h1><span class="section-number">2. </span>Calculating the power density spectrum<a class="headerlink" href="#calculating-the-power-density-spectrum" title="Link to this heading">#</a></h1>
 <section id="in-one-dimension">
 <h2><span class="section-number">2.1. </span>In one-dimension<a class="headerlink" href="#in-one-dimension" title="Link to this heading">#</a></h2>
-<p>We first start with a common analysis of turbulent fields, especially those that are perdioic and easily represented using Fourier modes: the power density spectrum.</p>
-<p>We begin with an 1D real field <span class="math notranslate nohighlight">\(\psi(x)\in\mathbb{R}\)</span> in a domain of <span class="math notranslate nohighlight">\(x\in [0,L]\)</span>. We can obtain its Fourier coefficient <span class="math notranslate nohighlight">\(\hat \psi(k)\)</span> using FFT. Then we have the Parseval’s theorem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b888799a-f45a-4094-b39f-d7867dcc9922">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-b888799a-f45a-4094-b39f-d7867dcc9922" title="Permalink to this equation">#</a></span>\[\begin{align}
+<p>We first start with a common analysis of turbulent fields, especially those that are periodic and easily represented using Fourier modes: the power density spectrum.</p>
+<p>We begin with an 1D real field <span class="math notranslate nohighlight">\(\psi(x)\in\mathbb{R}\)</span> in a domain of <span class="math notranslate nohighlight">\(x\in [0,L]\)</span>. We can obtain its Fourier coefficient <span class="math notranslate nohighlight">\(\hat \psi(k)\)</span> using FFT. Then we have Parseval’s theorem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-274d0330-c4bf-41ea-8692-d9715c9e3faf">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-274d0330-c4bf-41ea-8692-d9715c9e3faf" title="Permalink to this equation">#</a></span>\[\begin{align}
     \sum_{k} |\hat \psi(k)|^2 = \frac{1}{L}\int^{L}_0 |\psi(x,y)|^2 \mathrm{d}x.
 \end{align}\]</div>
-<p>Note that the right-hand-side is the spatial average of <span class="math notranslate nohighlight">\(|\psi(x,y)|^2\)</span>. This is why we use the name “density” in “power density spectrum”.</p>
+<p>Note that the right-hand side is the spatial average of <span class="math notranslate nohighlight">\(|\psi(x,y)|^2\)</span>. This is why we use the name “density” in “power density spectrum”.</p>
 <p>We test this in Dedalus</p>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
@@ -485,7 +485,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88df21633ca886ff41b4e36f43dce5ac4d7a9c5211adc0883f49762c77502bbe.png" src="../_images/88df21633ca886ff41b4e36f43dce5ac4d7a9c5211adc0883f49762c77502bbe.png" />
+<img alt="../_images/0fc2f8f0645cce32c87d910fe9b7f02fae4ce89e56eced1f8c58c2bef62a31ec.png" src="../_images/0fc2f8f0645cce32c87d910fe9b7f02fae4ce89e56eced1f8c58c2bef62a31ec.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -498,15 +498,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5210430337007141
-[0.27409406]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8546152337662569
+[0.42902522]
 </pre></div>
 </div>
 </div>
 </div>
 <p>Wait a minute. They are not equal?!</p>
-<p>This is because for a real field, it is usual to use the conjugate symmetry of the Fourier coefficient for real field to disgard (almost) half of the Fourier coefficient. Sometimes this is done by saving only the positive half of the <em>complex</em> Fourier coefficient. In Dedalus, instead, the coefficients are <em>real</em>, effectively being factors in front of the <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> basis. Then this is also only half the storage requirement compared to saving all the <em>complex</em> coefficient.</p>
-<p>Then each FFT implementation have different conventions in scaling the coefficients. One has to be careful when using any FFT algorithm to pay attention and check. The test is of course the Parseval’s theorem.</p>
+<p>This is because for a real field, it is usual to use the conjugate symmetry of the Fourier coefficient for real fields to discard (almost) half of the Fourier coefficient. Sometimes this is done by saving only the positive half of the <em>complex</em> Fourier coefficient. In Dedalus, instead, the coefficients are <em>real</em>, effectively being factors in front of the <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> basis. Then this is also only half the storage requirement compared to saving all the <em>complex</em> coefficient.</p>
+<p>Then, each FFT implementation has different conventions in scaling the coefficients. One has to be careful when using any FFT algorithm to pay attention and check. The test is, of course, the Parseval’s theorem.</p>
 <p>For Dedalus 1D real field, one should scale <span class="math notranslate nohighlight">\(|\hat\psi(k)|^2\)</span> by <span class="math notranslate nohighlight">\(1/2\)</span> for all non-zero wavenumbers. The zero wavenumber should have a factor of one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -524,14 +524,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2740940577253219
-0.27409405772532197
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4290252248018789
+0.42902522480187893
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now they match :) (up to numerical error).</p>
-<p>We are insterested in the power density spectrum. It is a function of each unique wavenumber. Since Dedalus uses <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> basis, each unique value is represented twive, once for <span class="math notranslate nohighlight">\(\sin(k)\)</span> and once for <span class="math notranslate nohighlight">\(\cos(k)\)</span>. This is also clear from a print out of the actual wavenumber below.</p>
+<p>We are interested in the power density spectrum. It is a function of each unique wavenumber. Since Dedalus uses <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> basis, each unique value is represented twice, once for <span class="math notranslate nohighlight">\(\sin(k)\)</span> and once for <span class="math notranslate nohighlight">\(\cos(k)\)</span>. This is also clear from a printout of the actual wavenumber below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
@@ -578,11 +578,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a033fe1bb7f44c1bcb66820dc34b55222fd3adfd35d70203f2708e8a35f27bcd.png" src="../_images/a033fe1bb7f44c1bcb66820dc34b55222fd3adfd35d70203f2708e8a35f27bcd.png" />
+<img alt="../_images/6424de00bac682d9f1297c066b56717286361da7076e19416160946a360d57b3.png" src="../_images/6424de00bac682d9f1297c066b56717286361da7076e19416160946a360d57b3.png" />
 </div>
 </div>
-<p>The final test of our algorithm is whether is still preserved the variance of the original data (satisfied Parseval’s).</p>
-<p>Any code calculating the spetrum should pass this test. It is surprising how many spectrum function in commonly used psudospectral code for GFD get this wrong. You should always check when using others’ function or after you wrote your own.</p>
+<p>The final test of our algorithm is whether the variance of the original data is still preserved (satisfies Parseval’s).</p>
+<p>Any code calculating the spectrum should pass this test. It is surprising how many spectrum functions in many commonly used pseudospectral codes for GFD get this wrong. You should always check when using others’ function or after you wrote your own.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">psi_spec</span><span class="p">))</span>
@@ -591,20 +591,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2740940577253219
-0.27409405772532197
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4290252248018789
+0.42902522480187893
 </pre></div>
 </div>
 </div>
 </div>
-<p>Power density spectrum is popular in the study of turbulence is deeply rooted in the mathematics of Gaussian random fields. It is related to the two-point corrolation function (or autocorrelation function) of the data, by using the Wiener–Khinchin theorem. We recomment the book of <span id="id1">[<a class="reference internal" href="../intro_n_conc/references.html#id3" title="A. M. Yaglom. An Introduction to the Theory of Stationary Random Functions. Courier Corporation, 1962. ISBN 978-0-486-49571-2.">Yaglom, 1962</a>]</span> for a through treatment, far beyond what we covered here.</p>
+<p>Power density spectrum is popular in the study of turbulence and is deeply rooted in the mathematics of Gaussian random fields. It is related to the two-point correlation function (or autocorrelation function) of the data, by using the Wiener–Khinchin theorem. We recommend the book of <span id="id1">[<a class="reference internal" href="../intro_n_conc/references.html#id3" title="A. M. Yaglom. An Introduction to the Theory of Stationary Random Functions. Courier Corporation, 1962. ISBN 978-0-486-49571-2.">Yaglom, 1962</a>]</span> for a thorough treatment, far beyond what we covered here.</p>
 </section>
 <section id="in-two-dimensions">
 <h2><span class="section-number">2.2. </span>In two-dimensions<a class="headerlink" href="#in-two-dimensions" title="Link to this heading">#</a></h2>
 <p>Assume we have a 2D doubly-perdioic field <span class="math notranslate nohighlight">\(\psi(x,y)\in\mathbb{R}\)</span> and its Fourier coefficient <span class="math notranslate nohighlight">\(\hat \psi(k,\ell)\)</span>. The Parseval’s theorem now states</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d10938c1-535f-4516-bcf4-d69b84a5d223">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-d10938c1-535f-4516-bcf4-d69b84a5d223" title="Permalink to this equation">#</a></span>\[\begin{align}
-    \sum_{k,\ell} |\hat \psi(k,\ell)|^2 = \frac{1}{Lx*Ly}\int^{L_y}_0\int^{L_x}_0 |\psi(x,y)|^2 \mathrm{d}x\mathrm{d}y
+<div class="amsmath math notranslate nohighlight" id="equation-8c73f0c7-e863-4066-8e0f-009c948d72a0">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-8c73f0c7-e863-4066-8e0f-009c948d72a0" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \sum_{k,\ell} |\hat \psi(k,\ell)|^2 = \frac{1}{LxLy}\int^{L_y}_0\int^{L_x}_0 |\psi(x,y)|^2 \mathrm{d}x\mathrm{d}y
 \end{align}\]</div>
 <p>We test this in Dedalus using an example that has <span class="math notranslate nohighlight">\(Lx\neq Ly\)</span> and differing resolution each side.</p>
 <div class="cell tag_hide-cell docutils container">
@@ -684,10 +684,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d1728e635ec5ff0fd917a8e778c512c8fe4cb9db754369cd2102e5a5865ef9af.png" src="../_images/d1728e635ec5ff0fd917a8e778c512c8fe4cb9db754369cd2102e5a5865ef9af.png" />
+<img alt="../_images/88de28fa0de00f05fd33e8771b08e9f34cb1eade510f7e21a9d99cbb04da0dee.png" src="../_images/88de28fa0de00f05fd33e8771b08e9f34cb1eade510f7e21a9d99cbb04da0dee.png" />
 </div>
 </div>
-<p>2D real fields also requires factors to match the Parseval’s theorem, and it is slightly more complicated. The factor should be <span class="math notranslate nohighlight">\(1/4\)</span>; except when <span class="math notranslate nohighlight">\(k=0\)</span> xor <span class="math notranslate nohighlight">\(\ell=0\)</span>, it should be <span class="math notranslate nohighlight">\(1/2\)</span>; and when <span class="math notranslate nohighlight">\(k=0\)</span> and <span class="math notranslate nohighlight">\(\ell=0\)</span>, it should be one.</p>
+<p>2D real fields also require factors to match Parseval’s theorem, and it is slightly more complicated. The factor should be <span class="math notranslate nohighlight">\(1/4\)</span>; except when <span class="math notranslate nohighlight">\(k=0\)</span> xor <span class="math notranslate nohighlight">\(\ell=0\)</span>, it should be <span class="math notranslate nohighlight">\(1/2\)</span>; and when <span class="math notranslate nohighlight">\(k=0\)</span> and <span class="math notranslate nohighlight">\(\ell=0\)</span>, it should be one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">psi_mag2d</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span>
@@ -704,15 +704,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13964394274888056
-0.13964394274888056
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.14197238042180568
+0.14197238042180568
 </pre></div>
 </div>
 </div>
 </div>
-<p>For isotropic 2D fields, the isotropic power density spectrum is a convenient measurememt of the amount of variance in each length scale. It is a 1D function of <span class="math notranslate nohighlight">\(K = \sqrt{k^2+\ell^2}\)</span>, the magnitude of the wavenumber. It is easy to see that the isotropic spectrum ignored the difference between different <span class="math notranslate nohighlight">\((k,\ell)\)</span> values with the same magnitude.</p>
-<p>To convert the 2D spectrum to the isotropic spectrum, we need to sum over coefficients with similar wavenumber magnitude. It is important here to make sure no mode is double counted and no mode is left behind. This ensures the isotropic spectrum preserve variance.</p>
-<p>We build two version, one for when the field has <span class="math notranslate nohighlight">\(Lx=Ly\)</span> and isotropic discretization. This is the most common situation. We also allows for anisotropic discretizated inputs.</p>
+<p>For isotropic 2D fields, the isotropic power density spectrum is a convenient measurement of the amount of variance in each length scale. It is a 1D function of <span class="math notranslate nohighlight">\(K = \sqrt{k^2+\ell^2}\)</span>, the magnitude of the wavenumber. It is easy to see that the isotropic spectrum ignores the difference between different <span class="math notranslate nohighlight">\((k,\ell)\)</span> values with the same magnitude.</p>
+<p>To convert the 2D spectrum to the isotropic spectrum, we need to sum over coefficients with similar wavenumber magnitude. It is important here to make sure no mode is double-counted and no mode is left behind. This ensures the isotropic spectrum preserves variance.</p>
+<p>We build two version, one for when the field has <span class="math notranslate nohighlight">\(Lx=Ly\)</span> and isotropic discretization. This is the most common situation. We also allow for anisotropically discretized inputs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">isospectrum_2d</span><span class="p">(</span><span class="n">psi_mag</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -757,8 +757,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1396439427488806
-0.13964394274888056
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.14197238042180568
+0.14197238042180568
 </pre></div>
 </div>
 </div>
@@ -776,13 +776,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5905511cf784c364b02f95c715c7427df29a7fabcea575ae44b07084d1f0a5da.png" src="../_images/5905511cf784c364b02f95c715c7427df29a7fabcea575ae44b07084d1f0a5da.png" />
+<img alt="../_images/5cd59866635199015177d39ca93fa7b11bf98953e4c22d9a7ede3fc903f45629.png" src="../_images/5cd59866635199015177d39ca93fa7b11bf98953e4c22d9a7ede3fc903f45629.png" />
 </div>
 </div>
 <p>Everything checks out.</p>
-<p>However, be careful that since the isotropic spectrum only take account of the variance for <span class="math notranslate nohighlight">\(k,\ell&lt;\min(k,\ell)\)</span>, variance with the largest wavenumber will not be accounted for in the isotropic spectrum. In most cases, they should be ignoored anyway, by the anti-aliasing.</p>
-<p>We wrap up out function for 1D and 2D into into one function that one can just call <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus_book/isospectrum/isospectrum.py"><code class="docutils literal notranslate"><span class="pre">isospectrum.py</span></code></a>.</p>
-<p>The work is not done. The above code is not tested for complex fields. It is also not tested for higher dimensional fields. I encourage you to contribute if you are interested!</p>
+<p>However, be careful that since the isotropic spectrum only takes account of the variance for <span class="math notranslate nohighlight">\(k,\ell&lt;\min(k,\ell)\)</span>, variance with the largest wavenumber will not be accounted for in the isotropic spectrum. In most cases, they should be ignored anyway by the anti-aliasing.</p>
+<p>We wrap up out function for 1D and 2D into one function that one can just call <a class="reference external" href="https://github.com/Empyreal092/GFD_in_Dedalus_book/tree/main/book/isospectrum/isospectrum.py"><code class="docutils literal notranslate"><span class="pre">isospectrum.py</span></code></a>.</p>
+<p>The work is not done. The above code is not tested for complex fields. It is also not tested for higher-dimensional fields. I encourage you to contribute if you are interested!</p>
 </section>
 </section>
 

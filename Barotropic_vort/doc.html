@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -182,7 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Baroclinic_mode/Baroclinic_mode.html">4. Baroclinic modes for arbitrary stratification</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../3DQG_Linstab/3DQG_Linstab_doc.html">5. Linear instability analysis of 3DQG baroclinic instability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Eady_doc.html">5.1. The Eady instability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Chatney_doc.html">5.2. The ocean Charney instability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3DQG_Linstab/Charney_doc.html">5.2. The ocean Charney instability</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro_n_conc/references.html">6. Bibliography</a></li>
@@ -388,15 +388,15 @@ document.write(`
 <p>We start with perhaps the most simple model of geophysical turbulence,
 barotropic vorticity model. We can write the model in vorticity form
 <span id="id1">Vallis [<a class="reference internal" href="../intro_n_conc/references.html#id5" title="Geoffrey K. Vallis. Atmospheric and Oceanic Fluid Dynamics: Fundamentals and Large-Scale Circulation. Cambridge University Press, Cambridge, 2 edition, 2017. ISBN 978-1-107-06550-5. doi:10.1017/9781107588417.">2017</a>]</span> §4.2.1:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c51d0478-f527-4d0c-bd39-3c2a9d30498a">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-c51d0478-f527-4d0c-bd39-3c2a9d30498a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8ad6f161-fcd8-46c4-8707-e66308004eda">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-8ad6f161-fcd8-46c4-8707-e66308004eda" title="Permalink to this equation">#</a></span>\[\begin{align}
     &amp;\frac{\mathrm{D}}{\mathrm{D} t}\left( \{\text{Ro}^{-1}\}f+\zeta \right) = 0,\\
     &amp;\zeta = \nabla^2\psi,\\
     &amp;u = -\frac{\partial\psi}{\partial y}, v = \frac{\partial\psi}{\partial x}.
 \end{align}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6b57bcdd-4128-473e-a6c4-e18f0981b10d">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-6b57bcdd-4128-473e-a6c4-e18f0981b10d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4dd0bf4a-ccd3-44b8-b01f-a99b0322444f">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-4dd0bf4a-ccd3-44b8-b01f-a99b0322444f" title="Permalink to this equation">#</a></span>\[\begin{align}
     \text{Ro} = \frac{U}{fL}.
 \end{align}\]</div>
 <p>If <span class="math notranslate nohighlight">\(f\)</span> is constant, it is the 2D incompressible Euler equation. We note
